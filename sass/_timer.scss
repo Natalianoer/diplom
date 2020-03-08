@@ -1,0 +1,32 @@
+.timer {
+  display: inline-block;
+  text-align: center;
+  @include text;
+  font-size: 15px;
+  line-height: 18px;
+  position: absolute;
+  width: 80%;
+  left: 46%;
+  transform: translateX(-50%);
+  bottom: -30px;
+  .timer_block {
+    padding: 7px;
+    border-radius: 3px;
+    background-color: $btn_color;
+    display: inline-block;
+    margin-right: 3px;
+    box-shadow: 6px 6px 9px 4px #337;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .timer_time {
+    padding: 5px;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 24px;
+  }
+  .timer_text {
+    display: block;
+  }
+}

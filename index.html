@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title class="title">Продажа автомобилей</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/996fa55600.js" crossorigin="anonymous"></script> <!--іконкі svg-->
+  </head>
+  <body>
+    <div class="jivosite_container"></div>
+
+    <div class="container">
+      <!-- Для работы корзины на каждой странице -->
+      <section>
+          <div class="container_catalogAll" id="container_catalogAll"></div>
+      </section>
+      <section class="container_cart"></section>
+        <!-- Конец корзины -->
+
+      <header class="header"></header>
+
+      <!-- <nav class="main_menu"></nav> -->
+
+      <!-- Слайдер -->
+      <div class="slider">
+          <a class="prev" onclick="minusSlide()">&#10094;</a>
+          <a class="next" onclick="plusSlide()">&#10095;</a>
+      </div>
+      <div class="slider-dots">
+          <span class="slider-dots_item" onclick="currentSlide(1)"></span>
+          <span class="slider-dots_item" onclick="currentSlide(2)"></span>
+          <span class="slider-dots_item" onclick="currentSlide(3)"></span>
+          <span class="slider-dots_item" onclick="currentSlide(4)"></span>
+          <span class="slider-dots_item" onclick="currentSlide(5)"></span>
+          <span class="slider-dots_item" onclick="currentSlide(6)"></span>
+          <span class="slider-dots_item" onclick="currentSlide(7)"></span>
+      </div>
+
+    <!--Преимущества сотрудничества-->
+     <section>
+       <div class="advantages">
+        <h1>Пользуйтесь всеми преимуществами<br>сотрудничества</h1>
+        <div class="advantages_div">
+          <div class="text">
+            <h3>Платите так, как вам удобно, и экономьте</h3>
+            <p>Возможна оплата: наличными, банковской картой, через систему iPay, с помощью карт-рассрочек "Халва" и "Карта покупок". Для юридических: безналичный расчёт (без НДС). Есть программа лояльности для постоянных клиентов</p>
+          </div>
+          <div class="advantages_img">
+              <img src="./img/advantages/1.jpg" alt="">
+          </div>
+        </div>
+        <div class="advantages_div">
+          <div class="text">
+            <h3>Работайте без задержек благодаря нашему сервисному центру</h3>
+            <p>Вся техника и оборудование проходят регулярное обслуживание в нашем сервисном центре. Если происходит поломка не по вине клиента — оперативно меняем оборудование на аналогичное. Арендная плата с момента уведомления о случившемся не взимается</p>
+          </div>
+          <div class="advantages_img">
+            <img src="./img/advantages/2.jpg" alt="">
+          </div>
+        </div>
+        <div class="advantages_div">
+          <div class="text">
+            <h3>Приобретайте надёжного партнёра, у которого есть всё: от техники до расходников</h3>
+            <p>Экономьте время и деньги. У нас есть все расходные материалы для садового и уборочного оборудования, шлифовальных работ, режущего бензо- и электроинструмента, а также для сварки</p>
+          </div>
+          <div class="advantages_img">
+            <img src="./img/advantages/3.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <!-- Текст в колонки -->
+      <section>
+        <div class="virtues">
+          <h1>Шаги для оформления заказа</h1>
+          <div class="flex_steps">
+          <div class="icons_steps">
+            <div class="icons_img">
+              <div class="pos_img">
+                <img src="./img/virtues/laptop_catalog.png" alt="">
+                <div class="number">
+                  <span>1</span>
+                </div>
+              </div>
+            </div>
+            <h6>Выбираете позицию, <br>которую хотите арендовать,<br> в нашем каталоге</h6>
+            <p>Или с помощью консультанта <br>по телефону <a href="tel:+375296332339">+375 29 633-23-39</a></p>
+          </div>
+          <div class="icons_steps">
+            <div class="icons_img">
+              <div class="pos_img">
+                <img src="./img/virtues/document.png" alt="">
+                <div class="number num_2">
+                  <span>2</span>
+                </div>
+              </div>
+            </div>
+            <h6>Заключаете договор проката при получении оборудования в момент доставки</h6>
+            <p>Или предварительно в нашем офисе. Вносите предоплату</p>
+          </div>
+          <div class="icons_steps">
+            <div class="icons_img">
+              <div class="pos_img">
+                <img class="pos_abs" src="./img/virtues/money.png" alt="">
+                <div class="number num_3">
+                  <span>3</span>
+                </div>
+              </div>
+            </div>
+            <h6>Пользуетесь столько, <br>сколько нужно, и зарабатываете</h6>
+            <p>Без необходимости заботиться о хранении и обслуживании дорогостоящих инструментов</p>
+          </div>
+        </div>
+        </div>
+      </section>
+      <!-- Карусель -->
+      <div class="akcii">
+        <h1>Наши акции</h1>
+        <div id="carousel" class="carouselAutoAkcii">
+          <a class="prev">&#10094;</a>
+          <div class="gallery">
+            <ul class="images">
+              <!-- добавление через js -->
+            </ul>
+          </div>
+          <a class="next">&#10095;</a>
+        </div>
+      </div>
+
+
+        <!-- Конец карусели -->
+
+      <footer class="footer"></footer>
+
+
+    </div>
+
+    <script type="text/javascript" src="./js/allConst.js"></script>
+    <script type="text/javascript" src="./js/catalogConst.js"></script>
+    <script type="text/javascript" src="./js/createOneProduct.js"></script>
+    <script type="text/javascript" src="./js/header.js"></script>
+    <!-- <script type="text/javascript" src="./js/mainMenuHeader.js"></script> -->
+    <script type="text/javascript" src="./js/carouselAuto.js"></script>
+    <script type="text/javascript" src="./js/carouselAutoAkcii.js"></script>
+    <script type="text/javascript" src="./js/timer.js"></script>
+    <script type="text/javascript" src="./js/footer.js"></script>
+    <script type="text/javascript" src="./js/jivosite.js"></script>
+
+    <script type="text/javascript" src="./js/cardStore.js"></script>
+    <script type="text/javascript" src="./js/catalogAll.js"></script>
+    <script type="text/javascript" src="./js/cart.js"></script>
+
+
+
+
+  </body>
+</html>

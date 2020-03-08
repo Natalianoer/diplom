@@ -1,0 +1,81 @@
+.jivosite_container {
+  padding: 10px 10px 10px 30px;
+  position: fixed;
+  z-index: 999999;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 0;
+  height: 300px;
+  background-color: white;
+  box-shadow: 0 0 9px 3px #333333;
+  transition: all .5s;
+  .close {
+    margin-left: -50px;
+    margin-top: -30px;
+  }
+}
+.jivosite {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 95%;
+  h6 {
+    @include text;
+    margin-bottom: 20px;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+  }
+  button {
+    padding: 10px 20px;
+    @include btn_click;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+  }
+  .text_input {
+    margin-top: 20px;
+    text-align: right;
+    margin-top: 20px;
+    width: 80%;
+    margin-left: 20%;
+    min-height: 30px;
+    word-wrap: break-word;
+  }
+  .otvet {
+    width: 80%;
+    margin-top: 10px;
+    display: none;
+    color: $main_color;
+  }
+}
+.fa-times-circle, .fa-arrow-alt-circle-left {
+  font-size: 40px;
+  border-radius: 50%;
+  background-color: $btn_color;
+  box-shadow: 0 0 20px 2px #333;
+  &:hover {
+    color: $text_hover;
+    cursor: pointer;
+  }
+}
+.fas.fa-arrow-alt-circle-left {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -20px;
+  display: none !important;
+}
+.closeJivosite {
+  width: 20px !important;
+  .fa-arrow-alt-circle-left {
+    display: block !important;
+  }
+  .fa-times-circle {
+    display: none;
+  }
+}

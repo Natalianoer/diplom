@@ -1,0 +1,107 @@
+.catalogAll, .container_faq {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 50px 0;
+  h1 {
+    @include titleText;
+  }
+}
+.container_catalogAll {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+    @include link_a;
+    .img {
+      background-size: contain;
+      height: 150px;
+      width: 23%;
+      background-repeat: no-repeat;
+      margin-right: 30px;
+    }
+    .item_descriptionTitle {
+      width: 38%;
+      position: relative;
+      .name {
+        @include titleText;
+        font-size: 26px;
+        line-height: normal;
+        text-align: left;
+        margin-bottom: 0px;
+      }
+      .btn {
+        @include btn_click;
+        padding: 15px;
+        background-color: $btn_color;
+        color: $main_color;
+        &:hover {
+          color: white;
+        }
+      }
+      .btnIzbrannoe  {
+        position: absolute;
+        font-size: 40px;
+        border-radius: 50%;
+        bottom: 26px;
+        right: 150px;
+        &:hover {
+          color: $text_hover;
+        }
+      }
+    }
+    .price, p, span,  {
+      @include text;
+      color: black;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .item_descriptionText {
+      text-align: right;
+      width: 25%;
+      margin-left: 30px;
+      .year {
+        margin-bottom: 5px;
+        position: relative;
+        sup {
+          font-size: 13px;
+          position: relative;
+          top: -6px;
+        }
+      }
+      span {
+        font-size: 15px;
+        line-height: 17px;
+        display: -webkit-inline-box;
+      }
+    }
+  }
+}
+.filterAll {
+  width: 17%;
+  text-align: right;
+  .marka_filter {
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 10px;
+    // max-height: 518px;
+    // overflow: hidden;
+  }
+  p {
+    @include text;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+      color: $text_hover;
+    }
+  }
+  .marka_filter {
+      border-left: 2px solid $main_color;
+  }
+}

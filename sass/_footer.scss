@@ -1,0 +1,159 @@
+footer {
+  width: 100%;
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  flex-wrap: wrap;
+  align-items: center;
+  .social_network {
+    text-align: right;
+    width: 50%;
+    @media (min-width: 0px) and (max-width: 1279px) {
+      text-align: left;
+      margin-left: 20px;
+      width: calc(40% - 20px);
+      display: flex;
+      justify-content: space-between;
+    }
+    @media (min-width: 0px) and (max-width: 767px) {
+      width: 100%;
+      order: 1;
+    }
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 25px;
+      background-color: $main_color;
+      @media (min-width: 0px) and (max-width: 767px) {
+        content: none;
+      }
+    }
+    a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      width: 50px;
+      height: 50px;
+      padding: 5px;
+      margin-right: 35px;
+      border-radius: 50%;
+      background-color: $btn_color;
+      -webkit-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+      -ms-transform-function: all 0.5s ease-out;
+      @media (min-width: 768px) and (max-width: 1279px) {
+        margin-right: 10px;
+      }
+      @media (min-width: 0px) and (max-width: 767px) {
+        height: 20px;
+      }
+      &:hover {
+        background-color: $main_color;
+        .fab {
+          color: $btn_color;
+        }
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  .phoneFooter {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    a {
+      @include link_a;
+      @include text;
+      margin-left: 35px;
+    }
+  }
+  .main__footer {
+    width: 100%;
+    background: -webkit-linear-gradient(left,$main_color,$text_hover);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px 0 20px;
+    margin-top: 30px;
+    @media (min-width: 0px) and (max-width: 767px) {
+      order: 2;
+      flex-wrap: wrap;
+      .main__footer__help, .main__footer__delivery, .main__footer__information {
+        margin: 0 20px 5px 20px;
+        width: calc(100% - 40px);
+        position: relative;
+      }
+      .main__footer__spoiler-click {
+        position: relative;
+        padding: 15px 0;
+        svg {
+          width: 15px;
+          height: 15px;
+          position: absolute;
+          right: 0;
+          top: 15px;
+        }
+      }
+      .main__footer__spoiler {
+        height: 0;
+        display: none;
+      }
+      .main__footer__spoiler.active {
+        height: auto;
+        display: block;
+        margin-top: 0 10px;
+        transition: all 0.5s;
+      }
+    }
+    .icon-minus {
+      display: none;
+    }
+    .icon-plus {
+      display: none;
+      @media (min-width: 0px) and (max-width: 767px) {
+        display: block;
+      }
+    }
+    h6 {
+      @include text_menu;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      @media (min-width: 0px) and (max-width: 767px) {
+        margin-bottom: 0;
+      }
+    }
+    ul {
+      li {
+        list-style-type: none;
+        @include text_menu;
+        font-weight: 400;
+        a {
+          display: inherit;
+          @include link_a;
+          @include text_menu;
+          padding: 7px 0;
+        }
+      }
+    }
+  }
+  .corporation {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 20px 0;
+    text-align: center;
+    @media (min-width: 0px) and (max-width: 767px) {
+      order: 4;
+    }
+    p {
+      @include text_menu;
+      font-weight: 400;
+      color: #525252;
+    }
+  }
+}
+.fab {
+  color: $main_color;
+  font-size: 26px;
+}

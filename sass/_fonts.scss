@@ -1,0 +1,42 @@
+/*Шрифт для иконок*/
+@font-face {
+    font-family: "icomoon";
+    src: url('../fonts/icomoon.ttf') format('truetype');
+}
+@font-face {
+    font-family: "icomoon";
+    src: url('../fonts/icomoon.eot') format('eot');
+}
+@font-face {
+    font-family: "icomoon";
+    src: url('../fonts/icomoon.svg') format('svg');
+}
+@font-face {
+    font-family: "icomoon";
+    src: url('../fonts/icomoon.woff') format('woff');
+}
+/*Шрифт для текста*/
+@font-face {
+  font-family: "Avenir Next Cyr";
+  src: url("../fonts/AvenirNextCyr-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next Cyr";
+  src: url("../fonts/AvenirNextCyr-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next Cyr";
+  src: url("../fonts/AvenirNextCyr-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next Cyr";
+  src: url("../fonts/AvenirNextCyr-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}

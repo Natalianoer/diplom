@@ -1,0 +1,129 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+$main_color: #4B0082;
+$text_hover: #6A5ACD;
+$btn_color: #DCDCDC;
+$font_icon: "icomoon";
+$font_text: "Avenir Next Cyr";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+.container {
+  position: relative;
+  background: #fff;
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1600px;
+  // margin: 10px auto;
+  // min-width: 1280px;
+  // max-width: 1440px;
+}
+@mixin link_a {
+  color: $main_color;
+  text-decoration: none;
+  &:visited {
+    color: $main_color;
+  }
+  &:hover {
+    color: $text_hover;
+    cursor: pointer;
+  }
+}
+@mixin text {
+  color: $main_color;
+  font-family: $font_text;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  @media (min-width: 768px) and (max-width: 1279px) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  @media (min-width: 0px) and (max-width: 767px) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+@mixin titleText {
+  color: $main_color;
+  font-family: $font_text;
+  line-height: 53px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 46px;
+  font-weight: 900;
+  margin-bottom: 60px;
+  @media (min-width: 0px) and (max-width: 940px) {
+    width: 100%;//370px
+  }
+}
+@mixin text_menu {
+  text-decoration: none;
+  color: white;
+  font-family: $font_text;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 700;
+  padding: 3px;
+  &:visited {
+    color: white
+  }
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+  @media (min-width: 768px) and (max-width: 1279px) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  @media (min-width: 0px) and (max-width: 767px) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+@mixin btn_size {
+  width: 150px;
+  height: 50px;
+}
+@mixin btn_click {
+  background-color: $main_color;
+  color: white;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+  border: 0;
+  &:hover {
+    background-color: $text_hover;
+    cursor: pointer;
+  }
+}
+@import "fonts";
+@import "header";
+@import "main_menu";
+@import "advantages";
+@import "virtues";
+@import "catalogAll";
+@import "extrance";
+@import "footer";
+@import "carouselAuto";
+@import "carouselAutoAkcii";
+@import "timer";
+@import "faq";
+@import "news";
+@import "contactCompany";
+@import "haracteristics";
+@import "breadcrumbs";
+@import "jivosite";
+@import "container_cart";
+@import "myPages";

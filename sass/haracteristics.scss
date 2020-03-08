@@ -1,0 +1,76 @@
+.all_haracteristics {
+  display: flex;
+}
+.haracteristics {
+  width: 50%;
+  border-right: 2px solid $btn_color;
+  margin: 0 50px 50px 50px;
+  .container_haract {
+    display: table-row;
+    margin-top: 10px;
+    .title, .option {
+      display: table-cell;
+      width: 150px;
+      @include text;
+    }
+    .option {
+      color: black;
+    }
+    sup {
+      font-size: 13px;
+      position: relative;
+      top: -6px;
+    }
+  }
+}
+.punkts {
+  display: flex;
+  flex-wrap: wrap;
+  .punkts_div {
+    margin-right: 50px;
+  }
+  h5 {
+    @include text;
+  }
+  li {
+    @include text;
+    color: black;
+    font-weight: 500;
+    i {
+      margin-right: 10px;
+    }
+  }
+}
+h2 {
+  @include titleText;
+  font-size: 40px;
+  color: $text_hover;
+}
+.review {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 50px;
+  input {
+    width: 100%;
+  }
+  textarea, input {
+    padding: 20px;
+    @include text;
+    color: black;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  button {
+    padding: 15px 30px;
+    @include btn_click;
+    margin-bottom: 50px;
+  }
+  #container_reviewTitle, #container_reviewText {
+    @include text;
+  }
+  #container_reviewText {
+    @include text;
+    color: black;
+    font-weight: 400;
+  }
+}

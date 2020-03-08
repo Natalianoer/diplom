@@ -1,0 +1,76 @@
+.container_cart {
+  display: none;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #dcdcdc;
+  position: absolute;
+  z-index: 9999;
+  top: 70px;
+  box-shadow: 1px 1px 9px 3px #333;
+}
+.container_cart, .izbrannoeAll {
+  width: 100%;
+  padding: 30px;
+  .close{
+    //position: fixed;
+    position: absolute;
+    top: -22px;
+    right: -22px;
+  }
+  .item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    .img {
+      width: 200px;
+      height: 150px;
+      margin-right: 100px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .name, .price {
+      margin-right: 70px;
+      @include text;
+    }
+    .price {
+      color: black;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.btnBasket {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  width: 180px;
+}
+.btnMinus, .btnCount, .btnPlus {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.btnCount {
+  width: 60px;
+  text-align: center;
+  border: 1px solid black;
+  background: white;
+  line-height: 26px;
+}
+.btnPlus {
+  margin-right: 50px;
+}
+.priceTotal {
+   color: $text_hover;
+}
+.basketSumma {
+  width: 100%;
+  text-align: right;
+  @include text;
+}
+.deleteItemIcon {
+  color: red;
+}

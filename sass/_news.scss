@@ -1,0 +1,208 @@
+.news {
+  width: 100%;
+  padding: 20px 0 50px 0;
+  h1 {
+    @include titleText;
+  }
+  .all_news {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .small_news, .big_news {
+      position: relative;
+      overflow: hidden;
+      height: 600px;
+      margin-bottom: 50px;
+      transition: all 1s ease-out;
+      .bg_black {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        background-color: rgba(0,0,0,1);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        transition: all 1s;
+        background: black;
+        opacity: 0.7;
+      }
+      &:hover img {
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        opacity: 0.5;
+        -webkit-transition: all 1s ease-out;
+        transition: all 1s ease-out;
+      }
+      .discription_news, p {
+        @include text;
+      }
+      .text_news {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: relative;
+        padding: 20px;
+        div {
+          position: absolute;
+          bottom: 60px;
+        }
+        p {
+          font-weight: 400;
+          margin-top: 20px;
+        }
+        .discription_news {
+          font-size: 22px;
+        }
+      }
+    }
+    .big_news {
+      width: 66%;//940px
+      .text_news {
+        position: absolute;
+      }
+      .discription_news, p {
+        color: white;
+      }
+    }
+    .small_news {
+      width: 33%;//440
+      .bg_black {
+        height: 50%;
+      }
+      .text_news {
+        height: 50%;
+      }
+      .discription_news, p {
+        color: black;
+      }
+    }
+  }
+}
+span.markaAuto {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  @include text;
+  background-color: $main_color;
+  color: white;
+}
+.rating {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  // position: absolute;
+  // right: 20px;
+  // bottom: 40px;
+}
+.rating_item {
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  position: relative;
+  border-right: 25px solid transparent;
+  border-bottom: 17px solid $btn_color;
+  border-left: 25px solid transparent;
+  transform: rotate(35deg);
+  &:before, &:after {
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+  }
+  &:before {
+    top: -13px;
+    left: -16px;
+    border-bottom: 20px solid $btn_color;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    transform: rotate(-35deg);
+  }
+  &:after {
+    top: 2px;
+    left: -26px;
+    border-right: 25px solid transparent;
+    border-bottom: 17px solid $btn_color;
+    border-left: 25px solid transparent;
+    transform: rotate(-70deg);
+  }
+}
+
+.rating_item.active{
+  border-bottom: 17px solid $main_color;
+  &:before, &:after {
+    border-bottom: 20px solid $main_color;
+  }
+}
+
+
+.news_mers {
+  width: 100%;
+  padding-bottom: 50px;
+  .news_mers_title {
+    position: relative;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 600;
+    }
+  }
+  p {
+    @include text;
+    font-weight: 400;
+    margin-top: 30px;
+  }
+  .text_news {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* box-shadow: 2px 2px 6px 7px black; */
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    span.markaAuto {
+      bottom: 20px;
+      right: 20px;
+      top: auto;
+      left: auto;
+    }
+    div {
+      width: 80%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+    }
+    p {
+      color: white;
+      margin-top: 20px;
+    }
+    .discription_news {
+      @include text;
+      color: white;
+      font-size: 52px;
+      line-height: 60px;
+    }
+  }
+  .descr_news {
+    margin: 0 auto;
+    width: 80%;
+    p {
+      margin-bottom: 30px;
+      color: black;
+    }
+    img {
+      margin-left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+    }
+  }
+}

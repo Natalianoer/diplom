@@ -1,0 +1,278 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  @media (min-width: 0px) and (max-width: 767px) {
+    margin: 10px 15px;
+  }
+  .menu_left {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: 0px) and (max-width: 767px) {
+      width: auto;
+    }
+    nav {
+      display: inline-block;
+      ul {
+        display: flex;
+        @media (min-width: 768px) and (max-width: 1279px) {
+          justify-content: space-between;
+        }
+        @media (min-width: 0px) and (max-width: 767px) {
+          display: none;
+        }
+        li {
+          list-style-type: none;
+          display: inline;
+          margin-right: 35px;
+          &:last-child {
+            margin-right: 0;
+          }
+          &:first-child {
+            @media (min-width: 768px) and (max-width: 1279px) {
+              a {
+                padding-left: 0;
+              }
+            }
+          }
+          a {
+            text-transform: uppercase;
+            @include link_a;
+            @include text;
+            padding: 7px;
+          }
+        }
+      }
+    }
+    /*Мобильная версия*/
+    .burger {
+      display: none;
+      width: 20px;
+      height: 14px;
+      top: 0px;
+      position: relative;
+      z-index: 9999;
+      float: left;
+      clear: both;
+      @media (min-width: 0px) and (max-width: 767px) {
+        display: inline-block;
+      }
+      span {
+        display: block;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        margin-bottom: 4px;
+        transform-origin: 4px 0;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+        &:first-child {
+          transform-origin: 0% 0%;
+        }
+        &:nth-child(2) {
+          transform-origin: 0% 100%;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .burger.for-close {
+      top: 4px;
+      span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-8px, -11px);
+        background: #000 !important;
+        &:nth-last-child(3) {
+          opacity: 1;
+          transform: rotate(-45deg) translate(-6px, 8px);
+        }
+        &:nth-last-child(2) {
+          opacity: 0;
+          transform: rotate(0deg) scale(0.2, 0.2);
+        }
+      }
+    }
+    .menu__nav.is-open {
+      display: block;
+      z-index: 61;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      margin-top: 20px;
+      position: absolute;
+      background: #fff;
+      left: 0;
+      .menu__nav__div {
+        overflow: hidden !important;
+        opacity: 1;
+        -webkit-opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    .menu__nav__ul.active {
+      display: block;
+      text-align: left;
+      li {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-right: 0;
+      }
+    }
+    .menu_right {
+      display: flex;
+      justify-content: space-between;
+      width: auto;
+      align-items: center;
+      button {
+        @include btn_size;
+        @include btn_click;
+        margin-right: 20px;
+      }
+    }
+  }
+  .logo {
+    width: 150px;
+    height: 80px;
+    padding: 10px 10px 10px 0;
+    transform: scale(-1, 1);
+    .icon-logo {
+      -webkit-animation: shake .7s linear alternate infinite;
+      animation: shake .7s linear alternate infinite;
+      width: 100%;
+      height: 70px;
+      //fill: #4B0082;
+    }
+  }
+  div.search {
+    @media (min-width: 0px) and (max-width: 767px) {
+      order: 2;
+    }
+  }
+  div.title_site {
+    @media (min-width: 0px) and (max-width: 767px) {
+      order: 3;
+    }
+  }
+  div.basket {
+    @media (min-width: 0px) and (max-width: 767px) {
+      order: 4;
+    }
+  }
+  div.menu_left {
+    @media (min-width: 0px) and (max-width: 767px) {
+      order: 1;
+    }
+  }
+  .language {
+    float: right;
+    clear: both;
+    padding: 10px;
+    border: 0;
+    @media (min-width: 0px) and (max-width: 767px) {
+      display: none;
+    }
+    &:focus {
+      outline: 0;
+    }
+    .icon-circle-down {
+      -webkit-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+      -ms-transform-function: all 0.5s ease-out;
+    }
+    .icon-circle-down.active {
+      transform: rotate(-180deg);
+    }
+    svg {
+      margin-left: 10px;
+      width: 20px;
+      height: 20px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .b-search {
+    width: 700px;
+    height: 58px;
+    .search_inputwrap {
+      padding: 0 30px 0 15px;
+      height: 50px;
+      margin: 0;
+      position: relative;
+      border: 2px solid $main_color;
+      background: #fff;
+      .form_text {
+        width: 100%;
+        border: none;
+        outline: none;
+        color: $main_color;
+        overflow: hidden;
+        padding: 13px 0;
+        font-size: 16px;
+        display: block;
+      }
+      .search_submit {
+        position: absolute;
+        top: 11px;
+        right: 10px;
+        width: 20px;
+        height: 19px;
+        background: url("../img/icons/search.svg") no-repeat 0 0;
+        background-size: cover;
+        border-width: 0;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+  .basket {
+    display: flex;
+    font-size: 0;
+    border-radius: 10px;
+    .basket_icon, .basket_product {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      @include btn_size;
+    }
+    span {
+      display: inline-block;
+      width: 100%;
+        @include text;
+    }
+    .basket_icon {
+      background-color: $btn_color;
+      span {
+        background: url("../img/icons/basket.png") no-repeat 8px 4px;
+      }
+    }
+    .basket_product {
+      border: 1px solid $btn_color;
+      border-left: 0;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+@-webkit-keyframes shake {
+  100% {
+    -webkit-transform: translateX(-20px);
+  }
+}
+@keyframes shake {
+  100% {
+    transform: translateX(-20px);
+  }
+}

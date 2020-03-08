@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title class="title">Карточка товара</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/996fa55600.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="jivosite_container"></div>
+    <div class="container">
+
+      <!-- Для работы корзины на каждой странице -->
+      <section>
+          <div class="container_catalogAll" id="container_catalogAll"></div>
+      </section>
+      <section class="container_cart"></section>
+        <!-- Конец корзины -->
+
+      <header class="header"></header>
+      <div class="breadcrumbs">
+            <a href="../index.html">Главная</a>
+            <a href="catalogAll.html">Каталог</a>
+            <a class="active" href="#">Карточка товара</a>
+      </div>
+      <!-- <nav class="main_menu"></nav> -->
+
+      <section>
+        <div class="gallerySlider">
+          <div class="sliderAuto">
+              <a class="prev" onclick="minusSlide()">&#10094;</a>
+              <a class="next" onclick="plusSlide()">&#10095;</a>
+          </div>
+          <div class="slider-dots">
+              <span class="slider-dots_item" onclick="currentSlide(1)"></span>
+              <span class="slider-dots_item" onclick="currentSlide(2)"></span>
+              <span class="slider-dots_item" onclick="currentSlide(3)"></span>
+              <span class="slider-dots_item" onclick="currentSlide(4)"></span>
+              <span class="slider-dots_item" onclick="currentSlide(5)"></span>
+              <span class="slider-dots_item" onclick="currentSlide(6)"></span>
+              <span class="slider-dots_item" onclick="currentSlide(7)"></span>
+          </div>
+        </div>
+        <div class="all_haracteristics">
+          <div class="haracteristics">
+            <div class="container_haract">
+              <div class="title">Марка</div>
+              <div class="option">Skoda</div>
+            </div>
+            <div class="container_haract">
+              <div class="title">Модель</div>
+              <div class="option">Rapid</div>
+            </div>
+            <div class="container_haract">
+              <div class="title">Год</div>
+              <div class="option">2019</div>
+            </div>
+            <div class="container_haract">
+              <div class="title">Коробка</div>
+              <div class="option">Механика</div>
+            </div>
+            <div class="container_haract">
+              <div class="title">Привод</div>
+              <div class="option">Полный</div>
+            </div>
+            <div class="container_haract">
+              <div class="title">Двигатель</div>
+              <div class="option">Бензин</div>
+            </div>
+            <div class="container_haract">
+              <div class="title">Объём, см<sup>3</sup></div>
+              <div class="option">1598</div>
+            </div>
+            <div class="container_haract">
+              <div class="title">Кузов</div>
+              <div class="option">Внедорожник 5 дв.</div>
+            </div>
+            <div class="container_haract">
+              <div class="title">Цвет</div>
+              <div class="option">Синий</div>
+            </div>
+          </div>
+          <div class="punkts">
+            <div class="punkts_div">
+              <h5>Комфорт</h5>
+              <ul>
+                <li><i class="fas fa-angle-down"></i>Климат контроль</li>
+                <li><i class="fas fa-angle-down"></i>Обогрев сидений</li>
+                <li><i class="fas fa-angle-down"></i>Обогрев руля</li>
+                <li><i class="fas fa-angle-down"></i>Парктроники передние</li>
+                <li><i class="fas fa-angle-down"></i>Парктроники задние</li>
+              </ul>
+            </div>
+            <div class="punkts_div">
+              <h5>Оптика, свет, обзор</h5>
+              <ul>
+                <li><i class="fas fa-angle-down"></i>Светодиодные фары</li>
+                <li><i class="fas fa-angle-down"></i>Датчик дождя</li>
+                <li><i class="fas fa-angle-down"></i>Электропривод зеркал</li>
+              </ul>
+            </div>
+            <div class="punkts_div">
+              <h5>Салон, интерьер</h5>
+              <ul>
+                <li><i class="fas fa-angle-down"></i>Комбинированный салон</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <h2>Здесь Вы можете оставить свой комментарий</h2>
+        <div class="review">
+          <input class="input" type="text" name="" value="" placeholder="Введите Имя">
+          <textarea class="textarea" name="name" rows="4" cols="80" placeholder="Оставьте свой комментарий"></textarea>
+          <button class="reviewBtn" type="button" name="button">Оставить комментарий</button>
+          <div class="container_review">
+            <h3 id="container_reviewTitle"></h3>
+            <p id="container_reviewText"></p>
+          </div>
+        </div>
+
+      </section>
+
+      <footer class="footer"></footer>
+
+    </div>
+    <script type="text/javascript" src="../js/allConst.js"></script>
+    <script type="text/javascript" src="../js/catalogConst.js"></script>
+    <script type="text/javascript" src="../js/createOneProduct.js"></script>
+    <script type="text/javascript" src="../js/header.js"></script>
+
+    <script type="text/javascript" src="../js/galleryCategoryCar.js"></script>
+    <script type="text/javascript" src="../js/reviewCar.js"></script>
+    <script type="text/javascript" src="../js/jivosite.js"></script>
+    <script type="text/javascript" src="../js/footer.js"></script>
+
+    <script type="text/javascript" src="../js/cardStore.js"></script>
+    <script type="text/javascript" src="../js/catalogAll.js"></script>
+    <script type="text/javascript" src="../js/cart.js"></script>
+  </body>
+</html>

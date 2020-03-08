@@ -1,0 +1,39 @@
+.contact_company {
+  width: 100%;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  h1 {
+    @include titleText;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  a, p {
+    display: block;
+    @include text;
+    color: black;
+  }
+  a {
+    @include link_a;
+    &:visited {
+      color: black;
+    }
+  }
+  .discription_company {
+    margin-bottom: 40px;
+    p {
+      font-weight: 400;
+      span {
+        font-weight: 600;
+        color: $main_color;
+      }
+    }
+  }
+  .map {
+    width: 100%;
+    height: 500px;
+    margin: 40px 0;
+    filter: grayscale(1);
+  }
+}

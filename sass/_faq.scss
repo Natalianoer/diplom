@@ -1,0 +1,59 @@
+.container_faq {
+    padding: 20px 0 50px;
+}
+details {
+  display:block;
+  background: #fff;
+  width:100%;
+  padding: 0 20px;
+  box-shadow: 2px 8px 16px 0px #337;
+  border-radius: 3px;
+  overflow:hidden;
+  margin-bottom: 20px;
+  summary::-webkit-details-marker{display:none;}
+  summary::-moz-list-bullet{list-style-type:none;}
+  summary::marker{display:none;}
+  summary {
+     display:block;
+     padding: 20px 0;
+     @include text;
+     margin-bottom: 0;
+     cursor: pointer;
+     position: relative;
+     &:before {
+       top: 50%;
+       transform: translateY(-50%);
+       right: 20px;
+       color: transparent;
+       background: url("../img/icons/arrow.jpg") no-repeat;
+       background-size: contain;
+       width: 20px;
+       height: 15px;
+       content: "";
+       position: absolute;
+       transition: transform .5s;
+     }
+     &:focus {
+       outline:0;
+     }
+  }
+}
+details[open] > summary:before {
+  transform: rotate(180deg);
+}
+summary ~ * {
+  padding-bottom: 20px;
+  padding-right: 30px;
+  color: black;
+  font-family: $font_text;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+}
+details[open] summary ~ *{
+  animation: sweep .2s ease-in-out;
+}
+@keyframes sweep {
+  0%    {height: 0;}
+  100%  {height: auto;}
+}
