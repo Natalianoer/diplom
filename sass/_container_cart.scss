@@ -11,30 +11,66 @@
 .container_cart, .izbrannoeAll {
   width: 100%;
   padding: 30px;
+  @include tablet {
+    padding: 15px;
+  }
+  @include mobile {
+    padding: 15px;
+  }
   .close{
-    //position: fixed;
     position: absolute;
     top: -22px;
     right: -22px;
+    @include mobile {
+      right: 0;
+    }
   }
   .item {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 30px;
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    @include mobile {
+      justify-content: space-between;
+    }
     .img {
       width: 200px;
       height: 150px;
       margin-right: 100px;
       background-size: contain;
       background-repeat: no-repeat;
+      @include tablet {
+        width: 150px;
+        height: 100px;
+        margin-right: 30px;
+      }
+      @include mobile {
+        width: 50px;
+        height: 30px;
+        margin-right: 10px;
+      }
     }
     .name, .price {
       margin-right: 70px;
       @include text;
+      @include tablet {
+        margin-right: 30px;
+      }
+      @include mobile {
+        margin-right: 10px;
+      }
     }
     .price {
       color: black;
+    }
+    .priceTotal {
+      @include tablet {
+        width: 42%;
+      }
     }
     &:last-child {
       margin-bottom: 0;
@@ -45,6 +81,12 @@
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   width: 180px;
+  @include tablet {
+    width: 60px;
+  }
+  @include mobile {
+    width: 60px;
+  }
 }
 .btnMinus, .btnCount, .btnPlus {
   width: 30px;
@@ -52,6 +94,12 @@
   font-size: 20px;
   font-weight: 500;
   margin-right: 10px;
+  @include mobile {
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    margin-right: 1px;
+  }
 }
 .btnCount {
   width: 60px;
@@ -59,9 +107,16 @@
   border: 1px solid black;
   background: white;
   line-height: 26px;
+  @include mobile {
+    width: 20px;
+    line-height: 13px;
+  }
 }
 .btnPlus {
   margin-right: 50px;
+  @include mobile {
+    margin-right: 10px;
+  }
 }
 .priceTotal {
    color: $text_hover;
@@ -70,7 +125,13 @@
   width: 100%;
   text-align: right;
   @include text;
+  @include mobile {
+    margin-top: 15px;
+  }
 }
 .deleteItemIcon {
   color: red;
+  @include mobile {
+    font-size: 20px;
+  }
 }

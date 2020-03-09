@@ -64,6 +64,9 @@
     }
     .big_news {
       width: 66%;//940px
+      @include mobile {
+        width: 100%;
+      }
       .text_news {
         position: absolute;
       }
@@ -73,6 +76,9 @@
     }
     .small_news {
       width: 33%;//440
+      @include mobile {
+        width: 100%;
+      }
       .bg_black {
         height: 50%;
       }

@@ -5,6 +5,15 @@
   }
   .izbrannoeAll {
     display: none;
+    .btn {
+      @include btn_click;
+      @include btn_size;
+      @include mobile {
+        padding: 5px 10px;
+        font-size: 12px;
+        height: auto;
+      }
+    }
   }
   .activeIzbrannoe {
     margin-bottom: 50px;

@@ -4,6 +4,9 @@
     margin: auto;
     height: 700px;
     margin-bottom: 15px;
+    @include mobile {
+      height: 300px;
+    }
     .item {
       -webkit-animation-name: fade;
       -webkit-animation-duration: 1.5s;
@@ -84,12 +87,21 @@
 }
 .gallerySlider {
    margin-bottom:  50px;
+   @include mobile {
+     margin-bottom: 25px;
+   }
   .sliderAuto {
     width: 50%;
     height: 400px;
+    @include mobile {
+      width: 95%;
+    }
   }
   .slider-dots {
     text-align: center;
+    @include mobile {
+      text-align: left;
+    }
   }
   .slider-dots_item {
     border-radius: 0;

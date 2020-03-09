@@ -9,6 +9,9 @@
   left: 46%;
   transform: translateX(-50%);
   bottom: -30px;
+  @include mobile {
+    top: 0;
+  }
   .timer_block {
     padding: 7px;
     border-radius: 3px;

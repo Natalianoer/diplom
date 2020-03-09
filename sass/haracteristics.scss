@@ -1,10 +1,16 @@
 .all_haracteristics {
   display: flex;
+  flex-wrap: wrap;
 }
 .haracteristics {
   width: 50%;
   border-right: 2px solid $btn_color;
   margin: 0 50px 50px 50px;
+  @include mobile {
+    width: 100%;
+    border-right: 0;
+    margin: 0 20px 20px 20px;
+  }
   .container_haract {
     display: table-row;
     margin-top: 10px;
@@ -26,8 +32,15 @@
 .punkts {
   display: flex;
   flex-wrap: wrap;
+  @include mobile {
+    margin: 0 15px;
+  }
   .punkts_div {
     margin-right: 50px;
+    @include mobile {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
   }
   h5 {
     @include text;
@@ -45,11 +58,18 @@ h2 {
   @include titleText;
   font-size: 40px;
   color: $text_hover;
+  @include mobile {
+    width: 90%;
+  }
 }
 .review {
   display: flex;
   flex-direction: column;
   margin: 0 auto 50px;
+  @include mobile {
+    width: 90%;
+    margin: 0 auto;
+  }
   input {
     width: 100%;
   }
@@ -59,6 +79,9 @@ h2 {
     color: black;
     font-weight: 400;
     margin-bottom: 20px;
+    @include mobile {
+      padding: 10px;
+    }
   }
   button {
     padding: 15px 30px;

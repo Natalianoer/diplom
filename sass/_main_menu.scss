@@ -22,6 +22,9 @@
         position: relative;
         padding: 17px;
         transition: all 0.2s;
+        @include mobile {
+          padding: 17px 10px;
+        }
       }
       &:hover {
         cursor: pointer;
@@ -32,6 +35,9 @@
         }
         .car {
           display: flex;
+          @include mobile {
+            display: none;
+          }
         }
       }
     }

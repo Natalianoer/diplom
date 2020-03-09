@@ -3,7 +3,7 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  @media (min-width: 0px) and (max-width: 767px) {
+  @include mobile {
     margin: 10px 15px;
   }
   .menu_left {
@@ -12,28 +12,28 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media (min-width: 0px) and (max-width: 767px) {
-      width: auto;
-    }
-    nav {
+    .menu__nav {
       display: inline-block;
-      ul {
+      @include mobile {
+        display: none;
+      }
+      .menu__nav__ul {
         display: flex;
-        @media (min-width: 768px) and (max-width: 1279px) {
+        @include tablet {
           justify-content: space-between;
-        }
-        @media (min-width: 0px) and (max-width: 767px) {
-          display: none;
         }
         li {
           list-style-type: none;
           display: inline;
           margin-right: 35px;
+          @include tablet {
+            margin-right: 15px;
+          }
           &:last-child {
             margin-right: 0;
           }
           &:first-child {
-            @media (min-width: 768px) and (max-width: 1279px) {
+              @include tablet {
               a {
                 padding-left: 0;
               }
@@ -58,7 +58,7 @@ header {
       z-index: 9999;
       float: left;
       clear: both;
-      @media (min-width: 0px) and (max-width: 767px) {
+      @include mobile {
         display: inline-block;
       }
       span {
@@ -102,16 +102,18 @@ header {
       }
     }
     .menu__nav.is-open {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       z-index: 61;
       width: 100%;
       height: 100vh;
       overflow: hidden;
-      margin-top: 20px;
+      top: 0px;
       position: absolute;
       background: #fff;
       left: 0;
-      .menu__nav__div {
+      .menu__nav__ul {
         overflow: hidden !important;
         opacity: 1;
         -webkit-opacity: 1;
@@ -120,11 +122,9 @@ header {
       }
     }
     .menu__nav__ul.active {
-      display: block;
-      text-align: left;
+        flex-direction: column;
+        align-items: center;
       li {
-        display: flex;
-        justify-content: center;
         margin-top: 20px;
         margin-right: 0;
       }
@@ -138,6 +138,14 @@ header {
         @include btn_size;
         @include btn_click;
         margin-right: 20px;
+        @include tablet {
+          width: auto;
+          padding: 5px 10px;
+        }
+        @include mobile {
+          margin-right: 0;
+          margin-left: 20px;
+        }
       }
     }
   }
@@ -151,27 +159,6 @@ header {
       animation: shake .7s linear alternate infinite;
       width: 100%;
       height: 70px;
-      //fill: #4B0082;
-    }
-  }
-  div.search {
-    @media (min-width: 0px) and (max-width: 767px) {
-      order: 2;
-    }
-  }
-  div.title_site {
-    @media (min-width: 0px) and (max-width: 767px) {
-      order: 3;
-    }
-  }
-  div.basket {
-    @media (min-width: 0px) and (max-width: 767px) {
-      order: 4;
-    }
-  }
-  div.menu_left {
-    @media (min-width: 0px) and (max-width: 767px) {
-      order: 1;
     }
   }
   .language {
@@ -182,29 +169,31 @@ header {
     @media (min-width: 0px) and (max-width: 767px) {
       display: none;
     }
-    &:focus {
-      outline: 0;
+    a {
+      padding: 7px;
+      @include link_a;
+      font-weight: 700;
     }
-    .icon-circle-down {
-      -webkit-transition: all 0.5s ease-out;
-      transition: all 0.5s ease-out;
-      -ms-transform-function: all 0.5s ease-out;
-    }
-    .icon-circle-down.active {
-      transform: rotate(-180deg);
-    }
-    svg {
+    #ru:after {
+      content: "";
+      display: inline-block;
+      width: 2px;
       margin-left: 10px;
-      width: 20px;
-      height: 20px;
-    }
-    &:hover {
-      cursor: pointer;
+      height: 12px;
+      background-color: $btn_color;
     }
   }
   .b-search {
     width: 700px;
     height: 58px;
+    @include tablet {
+      width: 100%;
+      order: 2;
+    }
+    @include mobile {
+      width: 100%;
+      order: 2;
+    }
     .search_inputwrap {
       padding: 0 30px 0 15px;
       height: 50px;
@@ -240,6 +229,12 @@ header {
     display: flex;
     font-size: 0;
     border-radius: 10px;
+    @include tablet {
+      order: 1;
+    }
+    @include mobile {
+      order: 1;
+    }
     .basket_icon, .basket_product {
       display: flex;
       align-items: center;
@@ -249,12 +244,16 @@ header {
     span {
       display: inline-block;
       width: 100%;
-        @include text;
+      @include text;
     }
     .basket_icon {
       background-color: $btn_color;
       span {
         background: url("../img/icons/basket.png") no-repeat 8px 4px;
+        @include mobile {
+          width: 32px;
+          font-size: 0;
+        }
       }
     }
     .basket_product {

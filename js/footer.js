@@ -138,3 +138,12 @@ class SocialIconAll {
     }
 }
 let socialIconAll = new SocialIconAll('.social_network', socialSeti);
+
+
+let menu_spoilerClick = document.querySelectorAll("div.main__footer__spoiler-click");
+
+menu_spoilerClick.forEach(function(element){
+    element.addEventListener("click", function() {
+      element.classList.toggle('active');
+});
+});

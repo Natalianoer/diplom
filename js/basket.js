@@ -1,4 +1,4 @@
-class Izbrannoe{
+ class Izbrannoe{
     constructor(catalogCounter, containerCart, catalogProduct){
         this.catalogCounter = document.querySelector(catalogCounter);
         this.containerCart = document.querySelector(containerCart);
@@ -11,9 +11,20 @@ class Izbrannoe{
             izbrannoe.containerCart.classList.toggle('activeIzbrannoe');
             let productsCart = izbrannoe.getProductCart();
             let wrapper = document.createElement('slot');
+            let products = cardStore.getProduct();
             let basketSumma;
 
             for( let i = 0; i < productsCart.length; i++){
+
+              let index = products.indexOf(productsCart[i].id);
+              let activeText;
+
+              if (index === -1) {
+                  activeText = "Добавить в корзину";
+              } else {
+                  activeText = "Удалить из корзины";
+              }
+
                 let item = createOneProduct.getProductItem({
                     tagName: 'div',
                     className: 'item'
@@ -33,30 +44,12 @@ class Izbrannoe{
                     className: "img",
                     backgroundImg: `url(${productsCart[i].img})`   //nazvanie svoistva =
                 })
-                let btnBasket = createOneProduct.getProductItem({
-                    tagName: "div",
-                    className: "btnBasket"
-                })
-                let btnMinus = createOneProduct.getProductItem({
+                let btn = createOneProduct.getProductItem({
                     tagName: "button",
-                    className: "btnMinus",
-                    textName: "-"
+                    className: "btn",
+                    id: productsCart[i].id,
+                    textName: activeText
                 })
-                let btnCount = createOneProduct.getProductItem({
-                    tagName: "div",
-                    className: "btnCount",
-                    textName: 1
-                })
-                let btnPlus = createOneProduct.getProductItem({
-                    tagName: "button",
-                    className: "btnPlus",
-                    textName: "+"
-                })
-                let priceTotal = createOneProduct.getProductItem({
-                    tagName: 'div',
-                    className: 'price priceTotal',
-                    textName: "Итоговая сумма" + '<br>' + productsCart[i].price.toLocaleString() + " " + "BYN"//Обращение уже к полученному массиву товаров
-                });
                 let deleteItemIcon = createOneProduct.getProductItem({
                     tagName: 'i',
                     className: 'fas fa-times-circle deleteItemIcon'
@@ -74,46 +67,25 @@ class Izbrannoe{
                     textName: summaPokupok.toLocaleString() + " " + "BYN"
                 });
                 summaPokupok = 0;
-                btnPlus.addEventListener('click', () => {
-                  count = count + 1;
-                  btnCount.innerText = count;
-                  priceTotal.innerHTML = "Итоговая сумма" + "<br>" + (pticeRez * count).toLocaleString() + " " + "BYN";
-                  for (let i = 0; i < productsCart.length; i++){
-                    summaPokupok += productsCart[i].price;;
-                  }
-                  basketSumma.innerHTML = "Стоимость покупки составит:" + "<br>" + summaPokupok.toLocaleString() + " " + "BYN";
-                });
-                btnMinus.addEventListener('click', () => {
-                  if (count <= 1) {
-                    btnCount.innerText = 1;
-                    priceTotal.innerHTML = "Итоговая сумма" + "<br>" + productsCart[i].price.toLocaleString() + " " + "BYN";
-                    for (let i = 0; i < productsCart.length; i++){
-                      summaPokupok = productsCart[i].price;;
-                    }
-                    basketSumma.innerHTML = "Стоимость покупки составит:" + "<br>" + summaPokupok.toLocaleString() + " " + "BYN";
-                  } else {
-                    count = count - 1;
-                    btnCount.innerText = count;
-                    priceTotal.innerHTML = "Итоговая сумма" + "<br>" + (pticeRez * count).toLocaleString() + " " + "BYN";
-                    for (let i = 0; i < productsCart.length; i++){
-                      summaPokupok -= productsCart[i].price;;
-                    }
-                    basketSumma.innerHTML = "Стоимость покупки составит:" + "<br>" + summaPokupok.toLocaleString() + " " + "BYN";
-                  }
-                });
 
                 deleteItemIcon.addEventListener('click', function() {
                   item.remove();
                 })
+                btn.addEventListener('click', function (){
+                    let id = this.getAttribute('id');
+                    let result = cardStore.putProduct(id);
+                    if (result.statusProduct) {
+                        this.innerHTML = "Удалить из корзины";
+                    }
+                    else {
+                        this.innerHTML = "Добавление в корзину";
+                    }
+                });
 
                 item.appendChild(img);
                 item.appendChild(name);
                 item.appendChild(price);
-                btnBasket.appendChild(btnMinus);
-                btnBasket.appendChild(btnCount);
-                btnBasket.appendChild(btnPlus);
-                item.appendChild(btnBasket);
-                item.appendChild(priceTotal);
+                item.appendChild(btn);
                 item.appendChild(deleteItemIcon);
                 wrapper.appendChild(item);
             }

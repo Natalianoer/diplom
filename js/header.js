@@ -77,6 +77,20 @@ let menu__nav__ul = document.createElement("ul");
 menu__nav__ul.className = "menu__nav__ul";
 menu__nav.appendChild(menu__nav__ul);
 
+let burger = document.createElement('div');
+burger.className = "burger";
+for (let i = 0; i < 3; i++) {
+  let spanBurger = document.createElement('span');
+  burger.appendChild(spanBurger);
+}
+menu_left.appendChild(burger);
+
+burger.addEventListener('click', function() {
+  this.classList.toggle('for-close');
+  menu__nav.classList.toggle('is-open');
+  menu__nav__ul.classList.toggle('active');
+})
+
 
 let menu_right = document.createElement("div");
 menu_right.className = "menu_right";
@@ -92,19 +106,31 @@ btn_registr.type = "button";
 btn_registr.innerHTML = "Регистрация";
 menu_right.appendChild(btn_registr);
 
-let select =  document.createElement("select");
+// let select =  document.createElement("select");
+// select.className = "language";
+//
+// let option1 = document.createElement("option");
+// option1.value = "Русский";
+// option1.id = "ru";
+// option1.innerHTML = "Русский";
+// select.appendChild(option1);
+//
+// let option2 = document.createElement("option");
+// option2.value = "English";
+// option2.id = "en";
+// option2.innerHTML = "English";
+// select.appendChild(option2);
+let select =  document.createElement("div");
 select.className = "language";
 
-let option1 = document.createElement("option");
-option1.value = "Русский";
+let option1 = document.createElement("a");
 option1.id = "ru";
-option1.innerHTML = "Русский";
+option1.innerHTML = "RU";
 select.appendChild(option1);
 
-let option2 = document.createElement("option");
-option2.value = "English";
+let option2 = document.createElement("a");
 option2.id = "en";
-option2.innerHTML = "English";
+option2.innerHTML = "EN";
 select.appendChild(option2);
 menu_right.appendChild(select);
 

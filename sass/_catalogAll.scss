@@ -4,6 +4,9 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 50px 0;
+  @include mobile {
+    padding: 25px 15px;
+  }
   h1 {
     @include titleText;
   }
@@ -13,22 +16,37 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @include mobile {
+    width: 100%;
+    order: 2;
+  }
   .item {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 30px;
     @include link_a;
+    @include mobile {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
     .img {
       background-size: contain;
       height: 150px;
       width: 23%;
       background-repeat: no-repeat;
       margin-right: 30px;
+      @include mobile {
+        margin-right: 10px;
+        height: 50px;
+      }
     }
     .item_descriptionTitle {
       width: 38%;
       position: relative;
+      @include mobile {
+        width: 170px;
+      }
       .name {
         @include titleText;
         font-size: 26px;
@@ -41,6 +59,10 @@
         padding: 15px;
         background-color: $btn_color;
         color: $main_color;
+        @include mobile {
+          padding: 2px 4px;
+          font-size: 12px;
+        }
         &:hover {
           color: white;
         }
@@ -50,7 +72,11 @@
         font-size: 40px;
         border-radius: 50%;
         bottom: 26px;
-        right: 150px;
+        right: auto;
+        @include mobile {
+          bottom: 0;
+          font-size: 20px;
+        }
         &:hover {
           color: $text_hover;
         }
@@ -61,11 +87,18 @@
       color: black;
       font-weight: 400;
       margin-bottom: 20px;
+      @include mobile {
+        margin-bottom: 5px;
+      }
     }
     .item_descriptionText {
       text-align: right;
       width: 25%;
       margin-left: 30px;
+      @include mobile {
+        margin-left: 0px;
+        width: 100%;
+      }
       .year {
         margin-bottom: 5px;
         position: relative;
@@ -86,22 +119,34 @@
 .filterAll {
   width: 17%;
   text-align: right;
+  @include mobile {
+    order: 1;
+    width: 100%;
+  }
   .marka_filter {
     width: 100%;
     padding: 20px 0;
     margin-bottom: 10px;
-    // max-height: 518px;
-    // overflow: hidden;
+    border-left: 2px solid $main_color;
+    @include mobile {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      border-left: 0;
+    }
   }
   p {
     @include text;
     margin-bottom: 10px;
     cursor: pointer;
+    @include mobile {
+      margin-left: 10px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
     &:hover {
       color: $text_hover;
     }
-  }
-  .marka_filter {
-      border-left: 2px solid $main_color;
   }
 }

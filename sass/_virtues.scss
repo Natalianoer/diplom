@@ -1,6 +1,9 @@
 .virtues {
   background-color: $btn_color;
   padding: 50px 0;
+  @include mobile {
+    padding: 25px 0;
+  }
   h1 {
     @include titleText;
   }
@@ -12,7 +15,7 @@
   @media (min-width: 0px) and (max-width: 940px) {
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 10px;/*72px .icons_steps*/
+    margin-bottom: 10px;
   }
   @media (min-width: 1280px) and (max-width: 1699px)  {
     margin-bottom: 50px;
@@ -20,14 +23,14 @@
 }
 .icons_steps {
   width: 370px;
-  //margin-right: 30px;
-  // display: inline-block;
-  // vertical-align: top;
-  @media (min-width: 0px) and (max-width: 940px) {
-    margin-bottom: 72px;
+  @include tablet {
+    width: 50%;
   }
-  @media (min-width: 1280px) and (max-width: 1699px) {
-    width: 320px;
+  @include mobile {
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 370px;
+    text-align: center;
   }
   a:visited, a:link {
     color: #000;
@@ -93,17 +96,27 @@
   h6 {
     @include text;
     margin-bottom: 24px;
-    @media (min-width: 1280px) and (max-width: 1699px) {
-      width: 90%;
+    width: 90%;
+    @include tablet {
+      margin: 0 auto 15px;
+      text-align: center;
+    }
+    @include mobile {
+      margin: 0 auto 15px;
     }
   }
   p {
     @include text;
+    width: 263px;
     span {
       color: #FFC600;
     }
-    @media (min-width: 1280px) and (max-width: 1699px) {
-      width: 263px;
+    @include tablet {
+      margin: 0 auto;
+      text-align: center;
+    }
+    @include mobile {
+      margin: 0 auto;
     }
   }
 }
