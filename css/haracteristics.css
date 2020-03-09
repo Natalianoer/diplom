@@ -6,7 +6,7 @@ Error: Undefined variable: "$btn_color".
 3:   flex-wrap: wrap;
 4: }
 5: .haracteristics {
-6:   width: 50%;
+6:   width: 39%;
 7:   border-right: 2px solid $btn_color;
 8:   margin: 0 50px 50px 50px;
 9:   @include mobile {
@@ -71,4 +71,4 @@ C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.4.25/vendor/listen/lib/listen/adap
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$btn_color\".\A         on line 7 of E:/DiplomOrmedia/sass/haracteristics.scss\A \A 2:   display: flex;\A 3:   flex-wrap: wrap;\A 4: }\A 5: .haracteristics {\A 6:   width: 50%;\A 7:   border-right: 2px solid $btn_color;\A 8:   margin: 0 50px 50px 50px;\A 9:   @include mobile {\A 10:     width: 100%;\A 11:     border-right: 0;\A 12:     margin: 0 20px 20px 20px;"; }
+  content: "Error: Undefined variable: \"$btn_color\".\A         on line 7 of E:/DiplomOrmedia/sass/haracteristics.scss\A \A 2:   display: flex;\A 3:   flex-wrap: wrap;\A 4: }\A 5: .haracteristics {\A 6:   width: 39%;\A 7:   border-right: 2px solid $btn_color;\A 8:   margin: 0 50px 50px 50px;\A 9:   @include mobile {\A 10:     width: 100%;\A 11:     border-right: 0;\A 12:     margin: 0 20px 20px 20px;"; }

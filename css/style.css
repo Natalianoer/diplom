@@ -469,7 +469,6 @@ header .b-search .search_inputwrap .form_text {
   overflow: hidden;
   padding: 13px 0;
   font-size: 16px;
-  display: block;
 }
 /* line 214, ../sass/_header.scss */
 header .b-search .search_inputwrap .search_submit {
@@ -543,26 +542,30 @@ header .basket span {
   }
 }
 /* line 249, ../sass/_header.scss */
+header .basket span.en {
+  display: none;
+}
+/* line 252, ../sass/_header.scss */
 header .basket .basket_icon {
   background-color: #DCDCDC;
 }
-/* line 251, ../sass/_header.scss */
+/* line 254, ../sass/_header.scss */
 header .basket .basket_icon span {
   background: url("../img/icons/basket.png") no-repeat 8px 4px;
 }
 @media (min-width: 0px) and (max-width: 767px) {
-  /* line 251, ../sass/_header.scss */
+  /* line 254, ../sass/_header.scss */
   header .basket .basket_icon span {
     width: 32px;
     font-size: 0;
   }
 }
-/* line 259, ../sass/_header.scss */
+/* line 262, ../sass/_header.scss */
 header .basket .basket_product {
   border: 1px solid #DCDCDC;
   border-left: 0;
 }
-/* line 263, ../sass/_header.scss */
+/* line 266, ../sass/_header.scss */
 header .basket:hover {
   cursor: pointer;
 }
@@ -1311,7 +1314,7 @@ header .basket:hover {
   font-size: 40px;
   border-radius: 50%;
   bottom: 26px;
-  right: auto;
+  right: 0;
 }
 @media (min-width: 0px) and (max-width: 767px) {
   /* line 70, ../sass/_catalogAll.scss */
@@ -2800,7 +2803,7 @@ span.markaAuto {
 
 /* line 5, ../sass/haracteristics.scss */
 .haracteristics {
-  width: 50%;
+  width: 39%;
   border-right: 2px solid #DCDCDC;
   margin: 0 50px 50px 50px;
 }
@@ -2846,35 +2849,41 @@ span.markaAuto {
   color: black;
 }
 /* line 25, ../sass/haracteristics.scss */
+.haracteristics .container_haract .title.en, .haracteristics .container_haract .option.en {
+  display: none;
+}
+/* line 28, ../sass/haracteristics.scss */
 .haracteristics .container_haract sup {
   font-size: 13px;
   position: relative;
   top: -6px;
 }
 
-/* line 32, ../sass/haracteristics.scss */
+/* line 35, ../sass/haracteristics.scss */
 .punkts {
   display: flex;
   flex-wrap: wrap;
+  width: 50%;
 }
 @media (min-width: 0px) and (max-width: 767px) {
-  /* line 32, ../sass/haracteristics.scss */
+  /* line 35, ../sass/haracteristics.scss */
   .punkts {
     margin: 0 15px;
+    width: 100%;
   }
 }
-/* line 38, ../sass/haracteristics.scss */
+/* line 43, ../sass/haracteristics.scss */
 .punkts .punkts_div {
   margin-right: 50px;
 }
 @media (min-width: 0px) and (max-width: 767px) {
-  /* line 38, ../sass/haracteristics.scss */
+  /* line 43, ../sass/haracteristics.scss */
   .punkts .punkts_div {
     margin-right: 10px;
     margin-bottom: 10px;
   }
 }
-/* line 45, ../sass/haracteristics.scss */
+/* line 50, ../sass/haracteristics.scss */
 .punkts h5 {
   color: #4B0082;
   font-family: "Avenir Next Cyr";
@@ -2883,20 +2892,20 @@ span.markaAuto {
   font-weight: 700;
 }
 @media (min-width: 768px) and (max-width: 1200px) {
-  /* line 45, ../sass/haracteristics.scss */
+  /* line 50, ../sass/haracteristics.scss */
   .punkts h5 {
     font-size: 14px;
     line-height: 16px;
   }
 }
 @media (min-width: 0px) and (max-width: 767px) {
-  /* line 45, ../sass/haracteristics.scss */
+  /* line 50, ../sass/haracteristics.scss */
   .punkts h5 {
     font-size: 12px;
     line-height: 14px;
   }
 }
-/* line 48, ../sass/haracteristics.scss */
+/* line 53, ../sass/haracteristics.scss */
 .punkts li {
   color: #4B0082;
   font-family: "Avenir Next Cyr";
@@ -2907,25 +2916,25 @@ span.markaAuto {
   font-weight: 500;
 }
 @media (min-width: 768px) and (max-width: 1200px) {
-  /* line 48, ../sass/haracteristics.scss */
+  /* line 53, ../sass/haracteristics.scss */
   .punkts li {
     font-size: 14px;
     line-height: 16px;
   }
 }
 @media (min-width: 0px) and (max-width: 767px) {
-  /* line 48, ../sass/haracteristics.scss */
+  /* line 53, ../sass/haracteristics.scss */
   .punkts li {
     font-size: 12px;
     line-height: 14px;
   }
 }
-/* line 52, ../sass/haracteristics.scss */
+/* line 57, ../sass/haracteristics.scss */
 .punkts li i {
   margin-right: 10px;
 }
 
-/* line 57, ../sass/haracteristics.scss */
+/* line 62, ../sass/haracteristics.scss */
 h2 {
   color: #4B0082;
   font-family: "Avenir Next Cyr";
@@ -2939,7 +2948,7 @@ h2 {
   color: #6A5ACD;
 }
 @media (min-width: 0px) and (max-width: 767px) {
-  /* line 57, ../sass/haracteristics.scss */
+  /* line 62, ../sass/haracteristics.scss */
   h2 {
     font-size: 23px;
     line-height: 25px;
@@ -2947,30 +2956,30 @@ h2 {
   }
 }
 @media (min-width: 0px) and (max-width: 767px) {
-  /* line 57, ../sass/haracteristics.scss */
+  /* line 62, ../sass/haracteristics.scss */
   h2 {
     width: 90%;
   }
 }
 
-/* line 65, ../sass/haracteristics.scss */
+/* line 70, ../sass/haracteristics.scss */
 .review {
   display: flex;
   flex-direction: column;
   margin: 0 auto 50px;
 }
 @media (min-width: 0px) and (max-width: 767px) {
-  /* line 65, ../sass/haracteristics.scss */
+  /* line 70, ../sass/haracteristics.scss */
   .review {
     width: 90%;
     margin: 0 auto;
   }
 }
-/* line 73, ../sass/haracteristics.scss */
+/* line 78, ../sass/haracteristics.scss */
 .review input {
   width: 100%;
 }
-/* line 76, ../sass/haracteristics.scss */
+/* line 81, ../sass/haracteristics.scss */
 .review textarea, .review input {
   padding: 20px;
   color: #4B0082;
@@ -2983,26 +2992,26 @@ h2 {
   margin-bottom: 20px;
 }
 @media (min-width: 768px) and (max-width: 1200px) {
-  /* line 76, ../sass/haracteristics.scss */
+  /* line 81, ../sass/haracteristics.scss */
   .review textarea, .review input {
     font-size: 14px;
     line-height: 16px;
   }
 }
 @media (min-width: 0px) and (max-width: 767px) {
-  /* line 76, ../sass/haracteristics.scss */
+  /* line 81, ../sass/haracteristics.scss */
   .review textarea, .review input {
     font-size: 12px;
     line-height: 14px;
   }
 }
 @media (min-width: 0px) and (max-width: 767px) {
-  /* line 76, ../sass/haracteristics.scss */
+  /* line 81, ../sass/haracteristics.scss */
   .review textarea, .review input {
     padding: 10px;
   }
 }
-/* line 86, ../sass/haracteristics.scss */
+/* line 91, ../sass/haracteristics.scss */
 .review button {
   padding: 15px 30px;
   background-color: #4B0082;
@@ -3018,7 +3027,7 @@ h2 {
   background-color: #6A5ACD;
   cursor: pointer;
 }
-/* line 91, ../sass/haracteristics.scss */
+/* line 96, ../sass/haracteristics.scss */
 .review #container_reviewTitle, .review #container_reviewText {
   color: #4B0082;
   font-family: "Avenir Next Cyr";
@@ -3027,20 +3036,20 @@ h2 {
   font-weight: 700;
 }
 @media (min-width: 768px) and (max-width: 1200px) {
-  /* line 91, ../sass/haracteristics.scss */
+  /* line 96, ../sass/haracteristics.scss */
   .review #container_reviewTitle, .review #container_reviewText {
     font-size: 14px;
     line-height: 16px;
   }
 }
 @media (min-width: 0px) and (max-width: 767px) {
-  /* line 91, ../sass/haracteristics.scss */
+  /* line 96, ../sass/haracteristics.scss */
   .review #container_reviewTitle, .review #container_reviewText {
     font-size: 12px;
     line-height: 14px;
   }
 }
-/* line 94, ../sass/haracteristics.scss */
+/* line 99, ../sass/haracteristics.scss */
 .review #container_reviewText {
   color: #4B0082;
   font-family: "Avenir Next Cyr";
@@ -3051,14 +3060,14 @@ h2 {
   font-weight: 400;
 }
 @media (min-width: 768px) and (max-width: 1200px) {
-  /* line 94, ../sass/haracteristics.scss */
+  /* line 99, ../sass/haracteristics.scss */
   .review #container_reviewText {
     font-size: 14px;
     line-height: 16px;
   }
 }
 @media (min-width: 0px) and (max-width: 767px) {
-  /* line 94, ../sass/haracteristics.scss */
+  /* line 99, ../sass/haracteristics.scss */
   .review #container_reviewText {
     font-size: 12px;
     line-height: 14px;
@@ -3625,4 +3634,9 @@ h2 {
     font-size: 12px;
     line-height: 14px;
   }
+}
+
+/* line 150, ../sass/style.scss */
+.en {
+  display: none;
 }

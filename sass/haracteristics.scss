@@ -3,7 +3,7 @@
   flex-wrap: wrap;
 }
 .haracteristics {
-  width: 50%;
+  width: 39%;
   border-right: 2px solid $btn_color;
   margin: 0 50px 50px 50px;
   @include mobile {
@@ -22,6 +22,9 @@
     .option {
       color: black;
     }
+    .title.en, .option.en {
+      display: none;
+    }
     sup {
       font-size: 13px;
       position: relative;
@@ -32,8 +35,10 @@
 .punkts {
   display: flex;
   flex-wrap: wrap;
+  width: 50%;
   @include mobile {
     margin: 0 15px;
+    width: 100%;
   }
   .punkts_div {
     margin-right: 50px;

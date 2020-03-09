@@ -15,7 +15,14 @@ class MainMenu {
             let li_a = this.getProductItem({
                 tagName: "a",
                 id: this.catalogProducts[i].id,
+                className: "ru",
                 textName: this.catalogProducts[i].title
+            })
+            let li_aEn = this.getProductItem({
+                tagName: "a",
+                id: this.catalogProducts[i].id,
+                className: "en",
+                textName: this.catalogProducts[i].titleEn
             })
             let car = this.getProductItem({
                 tagName: "div",
@@ -45,6 +52,7 @@ class MainMenu {
             car.appendChild(carModel);
             li_a.appendChild(car);
             li.appendChild(li_a);
+            li.appendChild(li_aEn);
             wrapper.appendChild(li);
         }
         this.containerProducts.appendChild(wrapper);

@@ -209,7 +209,7 @@ header {
         overflow: hidden;
         padding: 13px 0;
         font-size: 16px;
-        display: block;
+        //display: block;
       }
       .search_submit {
         position: absolute;
@@ -245,6 +245,9 @@ header {
       display: inline-block;
       width: 100%;
       @include text;
+    }
+    span.en {
+      display: none;
     }
     .basket_icon {
       background-color: $btn_color;

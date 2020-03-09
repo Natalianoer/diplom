@@ -3,25 +3,29 @@ const menuTitleUp = [
         id: 'catalogContAll',
         title: 'Каталог',
         linkHome: './pages/catalogAll.html',
-        link: './catalogAll.html'
+        link: './catalogAll.html',
+        titleEn: 'Catalog'
     },
     {
         id: 'fqa',
         title: 'FAQ',
         linkHome: './pages/faq.html',
-        link: './faq.html'
+        link: './faq.html',
+        titleEn: 'FAQ'
     },
     {
         id: 'news',
         title: 'Новости',
         linkHome: './pages/news.html',
-        link: './news.html'
+        link: './news.html',
+        titleEn: 'News'
     },
     {
         id: 'helpCar',
         title: 'Контакты',
         linkHome: './pages/about_company.html',
-        link: './about_company.html'
+        link: './about_company.html',
+        titleEn: 'Contacts'
     }
 ]
 
@@ -29,6 +33,7 @@ const menuMainHeader = [
     {
         id: 'diversity_car',
         title: 'Легковые машины',
+        titleEn: 'Cars',
         model: {
           model1: 'Audi',
           model2: 'BMW',
@@ -39,6 +44,7 @@ const menuMainHeader = [
     {
         id: 'jeep',
         title: 'Джипы',
+        titleEn: 'Jeeps',
         model: {
           model1: 'KIA',
           model5: 'Skoda',
@@ -51,6 +57,7 @@ const menuMainHeader = [
     {
         id: 'motocircles',
         title: 'Мотоциклы',
+        titleEn: 'Motorcycles',
         model: {
           model1: 'SUZUKI',
           model2: 'YAMAHA',

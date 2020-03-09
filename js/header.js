@@ -30,13 +30,25 @@
                 let li_a = this.getProductItem({
                     tagName: "a",
                     id: this.catalogProducts[i].id,
+                    className: "ru",
                     linkName: activeLink,
                     textName: this.catalogProducts[i].title
                 })
+                let li_aEn = this.getProductItem({
+                    tagName: "a",
+                    id: this.catalogProducts[i].id,
+                    className: "en",
+                    linkName: activeLink,
+                    textName: this.catalogProducts[i].titleEn
+                })
                 li.appendChild(li_a);
+                li.appendChild(li_aEn);
                 wrapper.appendChild(li);
 
                 li_a.addEventListener('click', function() {
+                  logoActive();
+                })
+                li_aEn.addEventListener('click', function() {
                   logoActive();
                 })
             }
@@ -54,6 +66,9 @@
             }
             if ('id' in card) {
                 element.setAttribute('id', card.id);
+            }
+            if ('className' in card) {
+                element.setAttribute('class', card.className);
             }
             return element;
 
@@ -98,39 +113,39 @@ menu_left.appendChild(menu_right);
 
 let btn_extr =  document.createElement("button");
 btn_extr.type = "button";
+btn_extr.className = "ru";
 btn_extr.innerHTML = "Войти";
+let btn_extrEn =  document.createElement("button");
+btn_extrEn.type = "button";
+btn_extrEn.className = "en";
+btn_extrEn.innerHTML = "To come in";
 menu_right.appendChild(btn_extr);
+menu_right.appendChild(btn_extrEn);
 
 let btn_registr =  document.createElement("button");
 btn_registr.type = "button";
+btn_registr.className = "ru";
 btn_registr.innerHTML = "Регистрация";
+let btn_registrEn =  document.createElement("button");
+btn_registrEn.type = "button";
+btn_registrEn.className = "en";
+btn_registrEn.innerHTML = "Registration";
 menu_right.appendChild(btn_registr);
+menu_right.appendChild(btn_registrEn);
 
-// let select =  document.createElement("select");
-// select.className = "language";
-//
-// let option1 = document.createElement("option");
-// option1.value = "Русский";
-// option1.id = "ru";
-// option1.innerHTML = "Русский";
-// select.appendChild(option1);
-//
-// let option2 = document.createElement("option");
-// option2.value = "English";
-// option2.id = "en";
-// option2.innerHTML = "English";
-// select.appendChild(option2);
 let select =  document.createElement("div");
 select.className = "language";
 
 let option1 = document.createElement("a");
 option1.id = "ru";
 option1.innerHTML = "RU";
+//option1.href = "index.html";
 select.appendChild(option1);
 
 let option2 = document.createElement("a");
 option2.id = "en";
 option2.innerHTML = "EN";
+//option2.href = "indexEn.html";
 select.appendChild(option2);
 menu_right.appendChild(select);
 
@@ -161,15 +176,19 @@ let fieldsetHeader = document.createElement("fieldset");
 fieldsetHeader.className = "search_inputwrap";
 let inputHeader = document.createElement("input");
 inputHeader.id = "text-to-find";
-inputHeader.className = "form_text";
+inputHeader.className = "form_text ru";
 inputHeader.name = "term";
 inputHeader.placeholder = "Поиск";
+let inputHeaderEn = document.createElement("input");
+inputHeaderEn.className = "form_text en";
+inputHeaderEn.placeholder = "Search";
 let buttonHeader = document.createElement("button");
 buttonHeader.type = "submit";
 buttonHeader.className = "search_submit";
 //buttonHeader.onclick = "javascript: FindOnPage('text-to-find',true); return false;"
 
 fieldsetHeader.appendChild(inputHeader);
+fieldsetHeader.appendChild(inputHeaderEn);
 fieldsetHeader.appendChild(buttonHeader);
 formHeader.appendChild(fieldsetHeader);
 search.appendChild(formHeader);
@@ -183,13 +202,22 @@ let basketIcon = document.createElement("div");
 basketIcon.className = "basket_icon";
 let spanBasket = document.createElement("span");
 spanBasket.innerHTML = "корзина";
+spanBasket.className = "ru";
+let spanBasketEn = document.createElement("span");
+spanBasketEn.innerHTML = "basket";
+spanBasketEn.className = "en";
 let basketProduct = document.createElement("div");
 basketProduct.className = "basket_product";
 let spanBasketProd = document.createElement("span");
-spanBasketProd.className = "spanBasketProd";
+spanBasketProd.className = "spanBasketProd ru";
 spanBasketProd.innerHTML = "нет товаров";
+let spanBasketProdEn = document.createElement("span");
+spanBasketProdEn.className = "spanBasketProd en spanBasketProdEn";
+spanBasketProdEn.innerHTML = "no goods";
 basketIcon.appendChild(spanBasket);
+basketIcon.appendChild(spanBasketEn);
 basketProduct.appendChild(spanBasketProd);
+basketProduct.appendChild(spanBasketProdEn);
 basket.appendChild(basketIcon);
 basket.appendChild(basketProduct);
 header.appendChild(basket);

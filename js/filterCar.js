@@ -1,6 +1,7 @@
 overwriteCount();
 function overwriteCount(){
     document.querySelector(".spanBasketProd").innerHTML = cardStore.getProduct().length;
+    document.querySelector(".spanBasketProdEn").innerHTML = cardStore.getProduct().length;
 }
 let main_menu_ul = document.getElementById('main_menu_ul');
 let allIdCatalog = main_menu_ul.querySelectorAll('li.menuLi');//4

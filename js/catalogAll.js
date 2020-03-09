@@ -21,11 +21,14 @@ class AllCatalog {
 
             let index = products.indexOf(this.catalogProducts[i].id);
             let activeText;
+            let activeTextEn;
 
             if (index === -1) {
                 activeText = "Добавить в корзину";
+                activeTextEn = "Add to Basket";
             } else {
                 activeText = "Удалить из корзины";
+                activeTextEn = "Remove from Cart";
             }
 
             result.push(this.catalogProducts[i].name);//для фильтра моделей
@@ -56,9 +59,15 @@ class AllCatalog {
             })
             let btn = createOneProduct.getProductItem({
                 tagName: "button",
-                className: "btn",
+                className: "btn ru",
                 id: this.catalogProducts[i].id,
                 textName: activeText
+            })
+            let btnEn = createOneProduct.getProductItem({
+                tagName: "button",
+                className: "btn en",
+                id: this.catalogProducts[i].id,
+                textName: activeTextEn
             })
             let btnIzbrannoe = createOneProduct.getProductItem({
                 tagName: "i",
@@ -98,6 +107,17 @@ class AllCatalog {
                 }
                 overwriteCount();
             });
+            btnEn.addEventListener('click', function (){
+                let id = this.getAttribute('id');
+                let result = cardStore.putProduct(id);
+                if (result.statusProduct) {
+                    this.innerHTML = "Remove from Cart";
+                }
+                else {
+                    this.innerHTML = "Add to Cart";
+                }
+                overwriteCount();
+            });
             btnIzbrannoe.addEventListener('click', function (){
                 let id = this.getAttribute('id');
                 let result = cardStore.putProduct(id);
@@ -117,6 +137,7 @@ class AllCatalog {
                 item_descriptionTitle.appendChild(name);
                 item_descriptionTitle.appendChild(price);
                 item_descriptionTitle.appendChild(btn);
+                item_descriptionTitle.appendChild(btnEn);
                 item_descriptionTitle.appendChild(btnIzbrannoe);
                 item_descriptionText.appendChild(year);
                 item_descriptionText.appendChild(capacity);
