@@ -1819,7 +1819,6 @@ footer .main__footer ul li:hover {
 }
 /* line 145, ../sass/_footer.scss */
 footer .main__footer ul li a {
-  display: inherit;
   color: #4B0082;
   text-decoration: none;
   text-decoration: none;

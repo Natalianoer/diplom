@@ -5,10 +5,6 @@ let textInput = document.querySelector('.input');
 let reviewBtn = document.querySelector('.reviewBtn');
 
 
-// textInput.value = localStorage.getItem('container_reviewTitle');
-// textReview.value = localStorage.getItem('container_reviewText');
-
-
 reviewBtn.addEventListener('click', () => {
   container_reviewTitle.innerHTML = "Имя:" + "   " + textInput.value;
   container_reviewText.innerHTML = textReview.value;

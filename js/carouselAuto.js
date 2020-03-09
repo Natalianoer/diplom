@@ -8,11 +8,11 @@ class SliderAuto {
     createProduct() {
         let wrapper = document.createElement('slot');
         for (let i=0; i<this.catalogProducts.length; i++) {
-            let item = this.getProductItem({
+            let item = createOneProduct.getProductItem({
                 tagName: "div",
                 className: "item"
             })
-            let img = this.getProductItem({
+            let img = createOneProduct.getProductItem({
                 tagName: "div",
                 className: "divImg",
               //  imgSrc: this.catalogProducts[i].img
@@ -26,19 +26,6 @@ class SliderAuto {
 
     }
 
-    getProductItem(card) {//proverka dannuh
-        let element = document.createElement(card.tagName);
-        // if ('imgSrc' in card) {
-        //     element.src = card.imgSrc;
-        // }
-        if ('className' in card) {
-            element.setAttribute('class', card.className);
-        }
-        if ('backgroundImg' in card) {
-            element.style.backgroundImage = card.backgroundImg;
-        }
-        return element;
-    }
 }
 
 let sliderAuto = new SliderAuto('.slider', sliderAutoImg);

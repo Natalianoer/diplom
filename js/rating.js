@@ -3,16 +3,6 @@ let rating = document.querySelector('.rating');
 // let lists = ulSpisok.getElementsByTagName("li");
 let elementRait;
 let element;
-// function createRaiting() {
-//   for (let i=0; i<lists.length; i++) {
-//           elementRait = document.createElement("div");
-//           elementRait.className = "rating";
-//           elementRait.id = "rating" + i;
-//           createProduct();
-//           lists[i].appendChild(elementRait);
-//       }
-// }
-// createRaiting();
 
 
 function createProduct() {

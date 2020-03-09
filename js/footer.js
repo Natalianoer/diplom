@@ -11,6 +11,7 @@ class AllFooter {
         for (let i=0; i<this.catalogProducts.length; i++) {
           let activeLink;
           let objList = Object.values(this.catalogProducts[i].list)
+          let objListEn = Object.values(this.catalogProducts[i].listEn)
           let objLink = Object.values(this.catalogProducts[i].link)
           let objLinkHome = Object.values(this.catalogProducts[i].linkHome)
 
@@ -24,36 +25,51 @@ class AllFooter {
 
 
 
-            let footerHelp = this.getProductItem({
+            let footerHelp = createOneProduct.getProductItem({
                 tagName: "div",
                 className: "main__footer__help"
             })
-            let spoilerClick = this.getProductItem({
+            let spoilerClick = createOneProduct.getProductItem({
                 tagName: "div",
                 className: "main__footer__spoiler-click"
             })
-            let h6 = this.getProductItem({
+            let h6 = createOneProduct.getProductItem({
                 tagName: "h6",
+                className: "ru",
                 textName: this.catalogProducts[i].title
             })
-            let ul = this.getProductItem({
+            let h6En = createOneProduct.getProductItem({
+                tagName: "h6",
+                className: "en",
+                textName: this.catalogProducts[i].titleEn
+            })
+            let ul = createOneProduct.getProductItem({
                 tagName: "ul",
                 className: "main__footer__spoiler"
             })
 
             for (let i=0; i<objList.length; i++) {
-              let li = this.getProductItem({
+              let li = createOneProduct.getProductItem({
                   tagName: "li"
               })
-              let li_a = this.getProductItem({
+              let li_a = createOneProduct.getProductItem({
                   tagName: "a",
+                  className: "ru",
                   textName: objList[i],
+                  hrefLink: activeLink
+              })
+              let li_aEn = createOneProduct.getProductItem({
+                  tagName: "a",
+                  className: "en",
+                  textName: objListEn[i],
                   hrefLink: activeLink
               })
               ul.appendChild(li);
               li.appendChild(li_a);
+              li.appendChild(li_aEn);
             }
             spoilerClick.appendChild(h6);
+            spoilerClick.appendChild(h6En);
             footerHelp.appendChild(spoilerClick);
             footerHelp.appendChild(ul);
             wrapper.appendChild(footerHelp);
@@ -61,20 +77,6 @@ class AllFooter {
         this.containerProducts.appendChild(wrapper);
     }
 
-    getProductItem(card) {//proverka dannuh
-        let element = document.createElement(card.tagName);
-        if ('textName' in card) {
-            element.innerHTML = card.textName;
-        }
-        if ('className' in card) {
-            element.setAttribute('class', card.className);
-        }
-        if ('hrefLink' in card) {
-            element.setAttribute('href', card.hrefLink);
-        }
-        return element;
-
-    }
 }
 
 let footer = document.querySelector(".footer");

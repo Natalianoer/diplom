@@ -13,38 +13,38 @@ class GalleryTimer {
     createProduct() {
         let wrapper = document.createElement('slot');
         for (let i=0; i<this.catalogProducts.length; i++) {
-            let li_gall = this.getProductItem({
+            let li_gall = createOneProduct.getProductItem({
                 tagName: "li",
                 className: "li_gall"
             })
-            let img_gall = this.getProductItem({
+            let img_gall = createOneProduct.getProductItem({
                 tagName: "img",
                 imgSrc: this.catalogProducts[i].imgGall
             })
-            let span_gall = this.getProductItem({
+            let span_gall = createOneProduct.getProductItem({
                 tagName: "span",
                 className: "span_gall",
                 textName: i
             })
-            let div_timer = this.getProductItem({
+            let div_timer = createOneProduct.getProductItem({
                 tagName: "div",
                 id: "timer" + i,
                 className: "timer"
             })
             let timerList = Object.values(this.catalogProducts[i].allTimer)
             for (let i=0; i<timerList.length; i++) {
-              let timer_block = this.getProductItem({
+              let timer_block = createOneProduct.getProductItem({
                   tagName: "div",
                   className: "timer_block"
               })
               //let timerListOne = Object.values(timerList[i])
               //for (let i=0; i<timerList.length; i++) {
-                  var timer_time = this.getProductItem({
+                  var timer_time = createOneProduct.getProductItem({
                         tagName: "span",
                         className: "timer_time" + " " + timerList[i].classTimer,
                         textName: timerList[i].classTimer
                   })
-                  var timer_text = this.getProductItem({
+                  var timer_text = createOneProduct.getProductItem({
                       tagName: "span",
                       className: "timer_text",
                       textName: timerList[i].textTimer
@@ -67,23 +67,6 @@ class GalleryTimer {
 
     }
 
-    getProductItem(card) {//proverka dannuh
-        let element = document.createElement(card.tagName);
-        if ('className' in card) {
-            element.setAttribute('class', card.className);
-        }
-        if ('id' in card) {
-            element.setAttribute('id', card.id);
-        }
-        if ('imgSrc' in card) {
-            element.src = card.imgSrc;
-        }
-        if ('textName' in card) {
-            element.innerHTML = card.textName;
-        }
-        return element;
-
-    }
 }
 
 let galleryTimer = new GalleryTimer('.images', gallTimer);

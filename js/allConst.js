@@ -283,6 +283,12 @@ const gallTimer = [
 const footerList = [
     {
         title: 'Покупателям',
+        titleEn: 'To buyers',
+        listEn: {
+          text1: "Company blog",
+          text2: "News",
+          tex3: "News"
+        },
         list: {
           text1: "Блог компании",
           text2: "Новости",
@@ -301,13 +307,18 @@ const footerList = [
     },
     {
       title: 'Выгодные предложения',
+      titleEn: 'Profitable offer',
       list: {
         text1: "Бонусная программа",
         text2: "Идеи подарков"
       },
+      listEn: {
+        text1: "Gift Ideassdsdf",
+        text2: "Gift Ideas"
+      },
       link: {
         link1: "about_company.html",
-        link2: "/about_company.html"
+        link2: "about_company.html"
       },
       linkHome: {
         link1: "./pages/about_company.html",
@@ -316,10 +327,16 @@ const footerList = [
     },
     {
       title: 'Полезная информация',
+      titleEn: 'Helpful information',
       list: {
         text1: "О компании",
         text2: "Производители",
         text3: "Дополнительные услуги"
+      },
+      listEn: {
+        text1: "About company",
+        text2: "Manufacturers",
+        text3: "About company"
       },
       link: {
         link1: "about_company.html",

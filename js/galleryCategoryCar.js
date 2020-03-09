@@ -34,14 +34,13 @@ class DescriptionCarGallery {
         let wrapper = document.createElement('slot');
         for (let i=0; i<this.catalogProducts.length; i++) {
             this.containerDots[i].style.backgroundImage = `url(${this.catalogProducts[i].img})`;
-            let item = this.getProductItem({
+            let item = createOneProduct.getProductItem({
                 tagName: "div",
                 className: "item"
             })
-            let img = this.getProductItem({
+            let img = createOneProduct.getProductItem({
                 tagName: "div",
                 className: "divImg",
-              //  imgSrc: this.catalogProducts[i].img
                 backgroundImg: `url(${this.catalogProducts[i].img})`
             })
 
@@ -53,16 +52,6 @@ class DescriptionCarGallery {
         console.log(this.containerDots.length);
     }
 
-    getProductItem(card) {//proverka dannuh
-        let element = document.createElement(card.tagName);
-        if ('className' in card) {
-            element.setAttribute('class', card.className);
-        }
-        if ('backgroundImg' in card) {
-            element.style.backgroundImage = card.backgroundImg;
-        }
-        return element;
-    }
 }
 
 let descriptionCarGallery = new DescriptionCarGallery('.sliderAuto', '.slider-dots_item', descrCar);

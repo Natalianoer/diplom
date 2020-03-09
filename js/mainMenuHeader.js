@@ -8,39 +8,39 @@ class MainMenu {
     createProduct() {
         let wrapper = document.createElement('slot');
         for (let i=0; i<this.catalogProducts.length; i++) {
-            let li = this.getProductItem({
+            let li = createOneProduct.getProductItem({
                 tagName: "li",
                 className: "menuLi"
             })
-            let li_a = this.getProductItem({
+            let li_a = createOneProduct.getProductItem({
                 tagName: "a",
                 id: this.catalogProducts[i].id,
                 className: "ru",
                 textName: this.catalogProducts[i].title
             })
-            let li_aEn = this.getProductItem({
+            let li_aEn = createOneProduct.getProductItem({
                 tagName: "a",
                 id: this.catalogProducts[i].id,
                 className: "en",
                 textName: this.catalogProducts[i].titleEn
             })
-            let car = this.getProductItem({
+            let car = createOneProduct.getProductItem({
                 tagName: "div",
                 className: "car"
             })
-            let carModel = this.getProductItem({
+            let carModel = createOneProduct.getProductItem({
                 tagName: "div",
                 className: "car_model"
             })
-            let ul = this.getProductItem({
+            let ul = createOneProduct.getProductItem({
                 tagName: "ul",
             })
             let modelList = Object.values(this.catalogProducts[i].model)
             for (let i=0; i<modelList.length; i++) {
-              let liModel = this.getProductItem({
+              let liModel = createOneProduct.getProductItem({
                   tagName: "li"
               })
-              let li_aModel = this.getProductItem({
+              let li_aModel = createOneProduct.getProductItem({
                   tagName: "a",
                   textName: modelList[i]
               })
@@ -56,21 +56,6 @@ class MainMenu {
             wrapper.appendChild(li);
         }
         this.containerProducts.appendChild(wrapper);
-    }
-
-    getProductItem(card) {//proverka dannuh
-        let element = document.createElement(card.tagName);
-        if ('textName' in card) {
-            element.innerHTML = card.textName;
-        }
-        if ('className' in card) {
-            element.setAttribute('class', card.className);
-        }
-        if ('id' in card) {
-            element.setAttribute('id', card.id);
-        }
-        return element;
-
     }
 }
 

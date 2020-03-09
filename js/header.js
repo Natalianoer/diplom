@@ -24,21 +24,21 @@
               }
 
 
-                let li = this.getProductItem({
+                let li = createOneProduct.getProductItem({
                     tagName: "li"
                 })
-                let li_a = this.getProductItem({
+                let li_a = createOneProduct.getProductItem({
                     tagName: "a",
                     id: this.catalogProducts[i].id,
                     className: "ru",
-                    linkName: activeLink,
+                    hrefLink: activeLink,
                     textName: this.catalogProducts[i].title
                 })
-                let li_aEn = this.getProductItem({
+                let li_aEn = createOneProduct.getProductItem({
                     tagName: "a",
                     id: this.catalogProducts[i].id,
                     className: "en",
-                    linkName: activeLink,
+                    hrefLink: activeLink,
                     textName: this.catalogProducts[i].titleEn
                 })
                 li.appendChild(li_a);
@@ -56,23 +56,6 @@
             //logoActive();
         }
 
-        getProductItem(card) {//proverka dannuh
-            let element = document.createElement(card.tagName);
-            if ('textName' in card) {
-                element.innerHTML = card.textName;
-            }
-            if ('linkName' in card) {
-                element.setAttribute('href', card.linkName);
-            }
-            if ('id' in card) {
-                element.setAttribute('id', card.id);
-            }
-            if ('className' in card) {
-                element.setAttribute('class', card.className);
-            }
-            return element;
-
-        }
     }
 
 
