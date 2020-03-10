@@ -68,6 +68,7 @@ class Cart{
                 for (let i = 0; i < productsCart.length; i++){
                   summaPokupok += Number(productsCart[i].price);
                 }
+                let firstPrice = summaPokupok.toLocaleString();
                 basketSumma = createOneProduct.getProductItem({
                     tagName: 'div',
                     className: 'basketSumma',
@@ -84,17 +85,14 @@ class Cart{
                   console.log(productsCart.length);
                   console.log(productsCart[i].price);
                   basketSumma.innerHTML = "Стоимость покупки составит:" + "<br>" + summaPokupok.toLocaleString() + " " + "BYN";
-                  return summaPokupok;
+                  //return summaPokupok;
                 });
                 btnMinus.addEventListener('click', function () {
-                  if (count <= 1) {
+                  if (count == 1) {
                     btnCount.innerText = 1;
                     priceTotal.innerHTML = "Итоговая сумма" + "<br>" + productsCart[i].price.toLocaleString() + " " + "BYN";
-                  //  for (let i = 0; i < productsCart.length; i++){
-                      summaPokupok += productsCart[i].price;
-                  //  }
-                    basketSumma.innerHTML = "Стоимость покупки составит:" + "<br>" + summaPokupok.toLocaleString() + " " + "BYN";
-                    return summaPokupok;
+                    basketSumma.innerHTML = "Стоимость покупки составит:" + "<br>" + firstPrice + " " + "BYN";
+                    //return summaPokupok;
                   } else {
                     count = count - 1;
                     btnCount.innerText = count;
@@ -103,7 +101,7 @@ class Cart{
                       summaPokupok -= productsCart[i].price;
                   //  }
                     basketSumma.innerHTML = "Стоимость покупки составит:" + "<br>" + summaPokupok.toLocaleString() + " " + "BYN";
-                    return summaPokupok;
+                    //return summaPokupok;
                   }
                 });
 
