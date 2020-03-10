@@ -14,8 +14,11 @@
     right: 26%;
     color: white;
     font-size: 80px;
+    @include mobile {
+      top: 2%;
+      right: 5%;
+    }
   }
-//  background-color: $btn_color;
 }
 .extrance {
   width: 100%;
