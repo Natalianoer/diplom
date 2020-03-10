@@ -53,7 +53,6 @@
                 })
             }
             this.containerProducts.appendChild(wrapper);
-            //logoActive();
         }
 
     }
@@ -132,7 +131,7 @@ option2.innerHTML = "EN";
 select.appendChild(option2);
 menu_right.appendChild(select);
 
-let titleText = document.getElementsByClassName('title');
+let titleText = document.querySelector('title');
 
 var imgLogo = document.createElement("img");
 imgLogo.className = "icon-logo";
@@ -266,6 +265,7 @@ buttonForm.innerText = "Вход";
 
 let containerExtrance = document.createElement("div");
 containerExtrance.className = "containerExtrance";
+
 document.body.appendChild(containerExtrance);
 
 let buttonFormReg = document.createElement("button");
@@ -274,39 +274,19 @@ buttonFormReg.type = "submit";
 buttonFormReg.name = "button";
 buttonFormReg.innerText = "Зарегистрироваться";
 
-let div_esc = document.createElement('div');
-div_esc.className = "div_esc";
-div_esc.style.width = "50px";
-div_esc.style.height = "50px";
-div_esc.style.position = "fixed";
-div_esc.style.right = "50px";
-div_esc.style.top = "20px";
-div_esc.style.background = "red";
-
-extranceModal.appendChild(div_esc);
 
 let i_esc = document.createElement("i");
 i_esc.className = "fas fa-times";
-div_esc.appendChild(i_esc);
+divAllForm.appendChild(i_esc);
 
 
-btn_extr.addEventListener("click", () => {
-  formModal.appendChild(inputFormEmail);
-  formModal.appendChild(inputFormPass);
-  formModal.appendChild(buttonForm);
-  extranceModal.appendChild(formModal);
-  divAllForm.appendChild(extranceModal);
-  containerExtrance.style.display = "block";
-  containerExtrance.appendChild(divAllForm);
-});
+btn_extr.addEventListener("click", btn_extrFunc);
+btn_extrEn.addEventListener("click", btn_extrFunc);
 
+btn_registr.addEventListener("click", btn_registrFunc);
+btn_registrEn.addEventListener("click", btn_registrFunc);
 
-div_esc.addEventListener("click", function() {
-    this.parentNode.parentNode.parentNode.remove();
-  })
-
-
-btn_registr.addEventListener("click", () => {
+function btn_registrFunc() {
   formModal.appendChild(inputFormName);
   formModal.appendChild(inputFormFamilia);
   formModal.appendChild(inputFormEmail);
@@ -315,17 +295,52 @@ btn_registr.addEventListener("click", () => {
   extranceModal.appendChild(formModal);
   divAllForm.appendChild(extranceModal);
   containerExtrance.style.display = "block";
-  containerExtrance.innerHTML = divAllForm.innerHTML;
+  containerExtrance.appendChild(divAllForm);
   let extrBtn = document.getElementById('registrBtn');
   extranceBtn(extrBtn);
-})
-if (buttonForm) {
-  buttonForm.addEventListener("click", () => {
-    //btn_extr.innerHTML = "Мой кабинет";
-    alert('privet');
-  })
+}
+function btn_extrFunc() {
+  formModal.appendChild(inputFormEmail);
+  formModal.appendChild(inputFormPass);
+  formModal.appendChild(buttonForm);
+  extranceModal.appendChild(formModal);
+  divAllForm.appendChild(extranceModal);
+  containerExtrance.style.display = "block";
+  containerExtrance.appendChild(divAllForm);
+  let extrBtn = document.getElementById('extranceBtn');
+  extranceBtn(extrBtn);
+  return containerExtrance;
 }
 
+i_esc.addEventListener("click", () => {
+  //  this.parentNode.parentNode.parentNode.remove();
+  containerExtrance.style.display = "none";
+})
+
+
+let btn_myPage =  document.createElement("button");
+btn_myPage.type = "button";
+btn_myPage.style.display = "none";
+btn_myPage.className = "ru myPage";
+btn_myPage.innerHTML = "Выход";
+let btn_myPageEn =  document.createElement("button");
+btn_myPageEn.type = "button";
+btn_myPageEn.style.display = "none";
+btn_myPageEn.className = "en myPage";
+btn_myPageEn.innerHTML = "Esctrance";
+menu_right.appendChild(btn_myPage);
+menu_right.appendChild(btn_myPageEn);
+
+if(titleText.innerText == "Мой кабинет") {
+  btn_myPage.style.display = "block";
+  btn_registr.style.display = "none";
+  btn_extr.style.display = "none";
+}
+btn_myPage.addEventListener("click", function() {
+  btn_registr.style.display = "block";
+  btn_extr.style.display = "block";
+  this.style.display = "none";
+})
 
 
 let form = document.getElementsByTagName('form');
