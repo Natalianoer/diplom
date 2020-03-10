@@ -11,9 +11,11 @@ class Cart{
             cart.containerCart.style.display = 'block';
             let productsCart = cart.getProductCart();
             let wrapper = document.createElement('slot');
+            let products = cardStore.getProduct();
             let basketSumma;
 
             for( let i = 0; i < productsCart.length; i++){
+
                 let item = createOneProduct.getProductItem({
                     tagName: 'div',
                     className: 'item'
@@ -58,9 +60,10 @@ class Cart{
                     textName: "Итоговая сумма" + '<br>' + productsCart[i].price.toLocaleString() + " " + "BYN"//Обращение уже к полученному массиву товаров
                 });
                 let deleteItemIcon = createOneProduct.getProductItem({
-                    tagName: 'i',
-                    className: 'fas fa-times-circle deleteItemIcon'
-                });
+                    tagName: "i",
+                    className: "deleteItemIcon fas fa-times-circle",
+                    id: productsCart[i].id
+                })
 
                 let count = 1;
                 let pticeRez = Number(productsCart[i].price);
@@ -85,14 +88,12 @@ class Cart{
                   console.log(productsCart.length);
                   console.log(productsCart[i].price);
                   basketSumma.innerHTML = "Стоимость покупки составит:" + "<br>" + summaPokupok.toLocaleString() + " " + "BYN";
-                  //return summaPokupok;
                 });
                 btnMinus.addEventListener('click', function () {
                   if (count == 1) {
                     btnCount.innerText = 1;
                     priceTotal.innerHTML = "Итоговая сумма" + "<br>" + productsCart[i].price.toLocaleString() + " " + "BYN";
                     basketSumma.innerHTML = "Стоимость покупки составит:" + "<br>" + firstPrice + " " + "BYN";
-                    //return summaPokupok;
                   } else {
                     count = count - 1;
                     btnCount.innerText = count;
@@ -101,14 +102,14 @@ class Cart{
                       summaPokupok -= productsCart[i].price;
                   //  }
                     basketSumma.innerHTML = "Стоимость покупки составит:" + "<br>" + summaPokupok.toLocaleString() + " " + "BYN";
-                    //return summaPokupok;
                   }
                 });
 
-                deleteItemIcon.addEventListener('click', function() {
-                  item.remove();
-                  // item.removeItem();
-                })
+                deleteItemIcon.addEventListener('click', function (){
+                    let id = this.getAttribute('id');
+                    let result = cardStore.putProduct(id);
+                    item.remove();
+                });
 
                 item.appendChild(img);
                 item.appendChild(name);

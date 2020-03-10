@@ -51,8 +51,9 @@
                     textName: activeText
                 })
                 let deleteItemIcon = createOneProduct.getProductItem({
-                    tagName: 'i',
-                    className: 'fas fa-times-circle deleteItemIcon'
+                    tagName: "button",
+                    className: "deleteItemIcon fas fa-times-circle",
+                    id: productsCart[i].idIzbr
                 });
 
                 let count = 1;
@@ -69,17 +70,20 @@
                 summaPokupok = 0;
 
                 deleteItemIcon.addEventListener('click', function() {
+                  let id = this.getAttribute('id');
+                  let result = cardStore.putProduct(id);
                   item.remove();
                 })
                 btn.addEventListener('click', function (){
                     let id = this.getAttribute('id');
                     let result = cardStore.putProduct(id);
                     if (result.statusProduct) {
-                        this.innerHTML = "Удалить из корзины";
+                        this.innerHTML = "Удалить";
                     }
                     else {
-                        this.innerHTML = "Добавление в корзину";
+                        this.innerHTML = "Добавить";
                     }
+    
                 });
 
                 item.appendChild(img);
