@@ -151,7 +151,7 @@ search.id = "b-search";
 let formHeader = document.createElement("form");
 formHeader.className = "search__form";
 formHeader.method = "get";
-formHeader.action = "/search/";
+formHeader.action = "pages/";
 formHeader.target = "_blank";
 
 let fieldsetHeader = document.createElement("fieldset");
@@ -434,3 +434,60 @@ function extranceBtn(btnClickForm) {
       }
     });
 }
+
+
+//Поиск
+// <form>
+//           <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Search" autofocus>
+//           <input class="button_for_turn_back" type="button" onclick="javascript: FindOnPage('text-to-find',false); return false;" value=" " title="Отменить поиск">
+//           <input class="button_for_search" type="submit" onclick="javascript: FindOnPage('text-to-find',true); return false;" value=" " title="Начать поиск">
+//         </form>
+// var input,search,pr,result,result_arr, locale_HTML, result_store;
+//
+// function func() {
+//  	locale_HTML = document.body.innerHTML;   // сохраняем в переменную весь body (Первоначальный)
+// }
+// setTimeout(func, 1000);  //ждем подгрузки Jsona и выполняем
+//
+// function FindOnPage(name, status) {
+//
+// 	input = document.getElementById(name).value; //получаем значение из поля в html
+//
+// 	if(input.length<3&&status==true)
+// 	{
+// 		alert('Для поиска вы должны ввести три или более символов');
+// 		function FindOnPageBack() { document.body.innerHTML = locale_HTML; }
+// 	}
+//
+// 	if(input.length>=3)
+// 	{
+// 		function FindOnPageGo() {
+//
+// 			search = '/'+input+'/g';  //делаем из строки регуярное выражение
+// 			pr = document.body.innerHTML;   // сохраняем в переменную весь body
+// 			result = pr.match(/>(.*?)</g);  //отсекаем все теги и получаем только текст
+// 			result_arr = [];   //в этом массиве будем хранить результат работы (подсветку)
+//
+// 			var warning = true;
+// 			for(var i=0;i<result.length;i++) {
+// 				if(result[i].match(eval(search))!=null) {
+// 					warning = false;
+// 				}
+// 			}
+// 			if(warning == true) {
+// 				alert('Не найдено ни одного совпадения');
+// 			}
+//
+// 			for(var i=0; i<result.length;i++) {
+// 				result_arr[i] = result[i].replace(eval(search), '<span style="background-color:yellow;">'+input+'</span>'); //находим нужные элементы, задаем стиль и сохраняем в новый массив
+// 			}
+// 			for(var i=0; i<result.length;i++) {
+// 				pr=pr.replace(result[i],result_arr[i])  //заменяем в переменной с html текст на новый из новогом ассива
+// 			}
+// 			document.body.innerHTML = pr;  //заменяем html код
+// 		}
+// 	}
+// 	function FindOnPageBack() { document.body.innerHTML = locale_HTML; }
+// 	if(status) { FindOnPageBack(); FindOnPageGo(); } //чистим прошлое и Выделяем найденное
+// 	if(!status) { FindOnPageBack(); } //Снимаем выделение
+// }
