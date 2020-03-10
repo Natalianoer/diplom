@@ -88,7 +88,7 @@ const menuMainHeader = [
 ]
 const sliderAutoImg = [
   {
-    img: './img/auto/2.jpg'
+    img: './img/auto/6.jpg'
   },
   {
     img: './img/auto/3.jpg'
@@ -100,7 +100,7 @@ const sliderAutoImg = [
     img: './img/auto/5.jpg'
   },
   {
-    img: './img/auto/6.jpg'
+    img: './img/auto/2.jpg'
   },
   {
     img: './img/auto/7.jpg'
