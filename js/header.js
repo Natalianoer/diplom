@@ -323,13 +323,8 @@ btn_myPage.type = "button";
 btn_myPage.style.display = "none";
 btn_myPage.className = "ru myPage";
 btn_myPage.innerHTML = "Выход";
-let btn_myPageEn =  document.createElement("button");
-btn_myPageEn.type = "button";
-btn_myPageEn.style.display = "none";
-btn_myPageEn.className = "en myPage";
-btn_myPageEn.innerHTML = "Esctrance";
 menu_right.appendChild(btn_myPage);
-menu_right.appendChild(btn_myPageEn);
+
 
 if(titleText.innerText == "Мой кабинет") {
   btn_myPage.style.display = "block";
